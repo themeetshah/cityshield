@@ -1,0 +1,659 @@
+circlename,regionname,divisionname,officename,pincode,officetype,delivery,district,statename,latitude,longitude
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kanbha BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.0242078,72.6904694
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kathwada BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.060794,72.714069
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Chandial BO,382433,BO,Delivery,AHMADABAD,GUJARAT,23.014467,72.809265
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ranodra BO,382433,BO,Delivery,AHMADABAD,GUJARAT,22.962718,72.800771
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Undrel BO,382433,BO,Delivery,AHMADABAD,GUJARAT,22.95514,72.773101
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ode BO,382427,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Pirana BO,382425,BO,Delivery,AHMADABAD,GUJARAT,22.879663,72.541372
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vasai BO,382425,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Lambha BO,382405,BO,Delivery,AHMADABAD,GUJARAT,22.932772,72.575012
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kali BO,382470,BO,Delivery,AHMADABAD,GUJARAT,23.09422,72.57487
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ramol B.O,382449,BO,Delivery,AHMADABAD,GUJARAT,22.9785591,72.6546589
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vivekanandnagar BO,382445,BO,Delivery,AHMADABAD,GUJARAT,22.945394,72.668149
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ellisbridge SO,380006,PO,Delivery,AHMADABAD,GUJARAT,23.018508,72.569819
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gujarat University SO,380009,PO,Non Delivery,AHMADABAD,GUJARAT,23.032196,72.578457
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,I I M SO,380015,PO,Non Delivery,AHMADABAD,GUJARAT,23.034048,72.534717
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jivraj Park SO,380051,PO,Delivery,AHMADABAD,GUJARAT,23.004847,72.520865
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Motera SO,380005,PO,Non Delivery,AHMADABAD,GUJARAT,23.1057,72.605401
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Paldi SO Ahmedabad,380007,PO,Delivery,AHMADABAD,GUJARAT,23.007355,72.557119
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Polytechnic SO Ahmedabad,380015,PO,Non Delivery,AHMADABAD,GUJARAT,23.032196,72.578457
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ghuma S.O,380058,PO,Non Delivery,AHMADABAD,GUJARAT,23.031364,72.451198
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bapunagar SO,380024,PO,Non Delivery,AHMADABAD,GUJARAT,23.029718,72.626586
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Behrampura SO,380022,PO,Delivery,AHMADABAD,GUJARAT,23.010425,72.586792
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ctm Char Rasta SO,380026,PO,Non Delivery,AHMADABAD,GUJARAT,22.992553,72.632006
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Daxini Society SO,380008,PO,Non Delivery,AHMADABAD,GUJARAT,22.991151,72.614369
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jamalpur SO Ahmedabad,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.016095,72.587501
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Municipal Corporation SO,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.02088,72.58617
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Nandej SO,382435,PO,Delivery,AHMADABAD,GUJARAT,22.888611,72.686032
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Raipur SO Ahmedabad,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.020803,72.591507
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vastral SO,382418,PO,Delivery,AHMADABAD,GUJARAT,23.005161,72.653415
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Nirnaynagar SO,382481,PO,Non Delivery,AHMADABAD,GUJARAT,23.072973,72.560596
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bhat BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.877817,72.464462
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Chamla BO,382433,BO,Delivery,AHMADABAD,GUJARAT,23.009455,72.82257
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kaniyel BO,382433,BO,Delivery,AHMADABAD,GUJARAT,22.967712,72.836691
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Limbadia BO,382330,BO,Delivery,AHMADABAD,GUJARAT,23.12472,72.683946
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Dhamatvan BO,382435,BO,Delivery,AHMADABAD,GUJARAT,22.957017,72.72812
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jagatpur BO,382470,BO,Delivery,AHMADABAD,GUJARAT,23.111883,72.545069
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ognaj BO,380060,BO,Delivery,AHMADABAD,GUJARAT,23.11646,72.51344
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gatrad B.O,382449,BO,Delivery,AHMADABAD,GUJARAT,22.978521,72.709901
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Navrangpura HO,380009,HO,Delivery,AHMADABAD,GUJARAT,23.034955,72.563609
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Revdibazar HO,380002,HO,Non Delivery,AHMADABAD,GUJARAT,23.028048,72.598523
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bopal SO,380058,PO,Delivery,AHMADABAD,GUJARAT,23.032196,72.578457
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gandhi Ashram SO Ahmedabad,380027,PO,Delivery,AHMADABAD,GUJARAT,23.063327,72.581808
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ghatlodia SO,380061,PO,Delivery,AHMADABAD,GUJARAT,23.068571,72.543114
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,O N G C SO,380005,PO,Non Delivery,AHMADABAD,GUJARAT,23.102683,72.585023
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Railway Colony SO Ahmedabad,380019,PO,Delivery,AHMADABAD,GUJARAT,23.098261,72.580299
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sabarmati SO,380005,PO,Delivery,AHMADABAD,GUJARAT,23.079513,72.589897
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shastrinagar SO Ahmedabad,380013,PO,Non Delivery,AHMADABAD,GUJARAT,23.064536,72.555998
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Civil Hospital SO,380016,PO,Delivery,AHMADABAD,GUJARAT,23.049684,72.607038
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kubernagar SO,382340,PO,Delivery,AHMADABAD,GUJARAT,23.07686,72.645915
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Odhav Industrial Estate SO,382415,PO,Delivery,AHMADABAD,GUJARAT,23.020521,72.659728
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Saijpur Bogha SO,382345,PO,Delivery,AHMADABAD,GUJARAT,23.059244,72.637678
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,T B Nagar SO,382350,PO,Delivery,AHMADABAD,GUJARAT,23.041585,72.642871
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bhairavnath Road SO,380028,PO,Non Delivery,AHMADABAD,GUJARAT,22.997354,72.594864
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Dariapur SO Ahmedabad,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.034994,72.589783
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gheekanta Road SO,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.031134,72.587722
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ghodasar SO Ahmedabad,380050,PO,Delivery,AHMADABAD,GUJARAT,22.985094,72.611236
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Isanpur SO,382443,PO,Delivery,AHMADABAD,GUJARAT,22.983023,72.597173
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Narol SO,382405,PO,Delivery,AHMADABAD,GUJARAT,22.962597,72.591018
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vatva SO,382445,PO,Non Delivery,AHMADABAD,GUJARAT,22.958173,72.611975
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Chandlodiya SO,382481,PO,Delivery,AHMADABAD,GUJARAT,23.081193,72.55128
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vatva Industrial Estate SO,382445,PO,Delivery,AHMADABAD,GUJARAT,22.960762,72.638216
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shela BO,380058,BO,Delivery,AHMADABAD,GUJARAT,23.009579,72.442649
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Chandkheda BO,382424,BO,Delivery,AHMADABAD,GUJARAT,23.113195,72.582651
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bakrol BO,382210,BO,Delivery,AHMADABAD,GUJARAT,23.029651,72.626689
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kasindra BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.894224,72.491112
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sanathal BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.972973,72.468245
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bakrol BO,382430,BO,Delivery,AHMADABAD,GUJARAT,22.923977,72.547911
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vehlal BO,382330,BO,Delivery,AHMADABAD,GUJARAT,23.07972,72.76125
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Miroli BO,382425,BO,Delivery,AHMADABAD,GUJARAT,22.879663,72.541372
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Paldi Kankaj BO,382425,BO,Delivery,AHMADABAD,GUJARAT,22.898425,72.516231
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Hirapur BO,382435,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Saijpur BO,382405,BO,Delivery,AHMADABAD,GUJARAT,22.962064,72.560226
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gota BO,382481,BO,Non Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Tragad BO,382470,BO,Delivery,AHMADABAD,GUJARAT,23.12918,72.5586
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Lapkaman BO,380060,BO,Delivery,AHMADABAD,GUJARAT,23.12884,72.49803
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Hathijan BO,382445,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vinzol BO,382445,BO,Delivery,AHMADABAD,GUJARAT,22.951053,72.641542
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bodakdev SO,380054,PO,Delivery,AHMADABAD,GUJARAT,23.044141,72.522147
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Darpan Society SO,380009,PO,Non Delivery,AHMADABAD,GUJARAT,23.047151,72.552753
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Narayannagar SO,380007,PO,Non Delivery,AHMADABAD,GUJARAT,22.998369,72.560181
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Ranip SO,382480,PO,Delivery,AHMADABAD,GUJARAT,23.074716,72.572032
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,S A C SO,380015,PO,Non Delivery,AHMADABAD,GUJARAT,23.027696,72.517625
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sarkhej Road SO,380007,PO,Non Delivery,AHMADABAD,GUJARAT,23.023546,72.58174
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,New Ranip,382470,PO,Non Delivery,AHMADABAD,GUJARAT,23.09435387,72.56675223
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kathwada Maize Product SO,382430,PO,Delivery,AHMADABAD,GUJARAT,23.024548,72.694473
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,N C Market SO,380002,PO,Non Delivery,AHMADABAD,GUJARAT,23.018464,72.59878
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Naroda I E SO,382330,PO,Delivery,AHMADABAD,GUJARAT,23.082874,72.667409
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Railwaypura SO,380002,PO,Delivery,AHMADABAD,GUJARAT,23.082874,72.667409
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Rajpur Gomtipur SO,380021,PO,Delivery,AHMADABAD,GUJARAT,23.013413,72.611874
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Rakhial Udyog Vistar SO,380023,PO,Delivery,AHMADABAD,GUJARAT,23.020662,72.626245
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Saraspur SO,380018,PO,Delivery,AHMADABAD,GUJARAT,23.025874,72.624663
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shahibag SO,380004,PO,Delivery,AHMADABAD,GUJARAT,23.059291,72.592386
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shahpur SO Ahmedabad,380004,PO,Non Delivery,AHMADABAD,GUJARAT,23.040064,72.578339
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Nikol SO,380049,PO,Delivery,AHMADABAD,GUJARAT,23.033766,72.662334
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,DELIVERY HUB AHMEDABAD,380003,PO,Delivery,AHMADABAD,GUJARAT,23.04,72.59
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Aslali SO,382427,PO,Delivery,AHMADABAD,GUJARAT,22.915218,72.59306
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gandhi Road SO Ahmedabad,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.024818,72.590647
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jawahar Chowk SO,380008,PO,Non Delivery,AHMADABAD,GUJARAT,22.99508,72.603594
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Khokhara Mehmadabad SO,380008,PO,Non Delivery,AHMADABAD,GUJARAT,23.001658,72.616878
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Lal Darwaja SO,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.025629,72.58016
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shah Alam Roza SO,380028,PO,Delivery,AHMADABAD,GUJARAT,22.998095,72.58989
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Fatewadi BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.97601,72.498976
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vishalpur BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.911611,72.487766
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kubadthal BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.033567,72.758744
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Pasunj BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.037077,72.798718
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bhavda BO,382433,BO,Delivery,AHMADABAD,GUJARAT,22.971551,72.771466
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Medra BO,382330,BO,Delivery,AHMADABAD,GUJARAT,23.118941,72.714422
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Pardhol BO,382330,BO,Delivery,AHMADABAD,GUJARAT,23.095606,72.726643
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Girmatha BO,382425,BO,Delivery,AHMADABAD,GUJARAT,22.877825,72.551355
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Geratpur BO,382435,BO,Delivery,AHMADABAD,GUJARAT,22.920627,72.648634
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Harniav BO,382435,BO,Delivery,AHMADABAD,GUJARAT,22.922235,72.749554
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gyaspur BO,382405,BO,Delivery,AHMADABAD,GUJARAT,22.966644,72.539031
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,B D Cell Ahmedabad City,380009,PO,Non Delivery,AHMADABAD,GUJARAT,23.04,72.57
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,D Cabin SO,380019,PO,Non Delivery,AHMADABAD,GUJARAT,23.104082,72.570112
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jodhpur Char Rasta SO,380015,PO,Non Delivery,AHMADABAD,GUJARAT,23.0268,72.52333
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Manekbag SO,380015,PO,Delivery,AHMADABAD,GUJARAT,23.015392,72.543014
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Memnagar SO,380052,PO,Delivery,AHMADABAD,GUJARAT,23.045133,72.531672
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Nava Vadaj SO,380013,PO,Non Delivery,AHMADABAD,GUJARAT,23.052198,72.555163
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sarkhej SO,382210,PO,Delivery,AHMADABAD,GUJARAT,22.9871059,72.5008461
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vadaj SO,380013,PO,Non Delivery,AHMADABAD,GUJARAT,23.050209,72.571517
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Cantonment SO,380004,PO,Non Delivery,AHMADABAD,GUJARAT,23.070036,72.607557
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Delhi Gate SO Ahmedabad,380004,PO,Non Delivery,AHMADABAD,GUJARAT,23.040167,72.588339
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Girdharnagar SO,380004,PO,Non Delivery,AHMADABAD,GUJARAT,23.047616,72.598123
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,I E Bapunagar SO,380024,PO,Delivery,AHMADABAD,GUJARAT,23.025837,72.624541
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Madhupura Market SO,380004,PO,Non Delivery,AHMADABAD,GUJARAT,23.046634,72.583567
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Naroda S A SO,382330,PO,Non Delivery,AHMADABAD,GUJARAT,23.070027,72.652202
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Naroda SO,382330,PO,Non Delivery,AHMADABAD,GUJARAT,23.074621,72.658447
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sukhrampura SO,380023,PO,Non Delivery,AHMADABAD,GUJARAT,23.012137,72.626433
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,District Court SO Ahmedabad,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.023546,72.58174
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Khadia SO,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.024344,72.594984
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Maninagar SO,380008,PO,Delivery,AHMADABAD,GUJARAT,22.998855,72.601144
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,S A Mills SO,380008,PO,Non Delivery,AHMADABAD,GUJARAT,23.002886,72.619061
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Digvijaynagar SO,382470,PO,Delivery,AHMADABAD,GUJARAT,23.11254,72.56382
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jantanagar S.O,382449,PO,Delivery,AHMADABAD,GUJARAT,23.005161,72.653415
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sola SO,380060,PO,Non Delivery,AHMADABAD,GUJARAT,23.072578,72.515861
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Dr. BAOU SO,382481,PO,Non Delivery,AHMADABAD,GUJARAT,23.12454,72.545224
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kolat BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.9673,72.430206
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Navapura BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.947864,72.44832
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Telav BO,382210,BO,Delivery,AHMADABAD,GUJARAT,22.986202,72.413541
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bhuvaldi BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.033152,72.717164
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kujad BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.060085,72.711379
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Zanu BO,382430,BO,Delivery,AHMADABAD,GUJARAT,23.024207,72.690469
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Chaulaj BO,382433,BO,Delivery,AHMADABAD,GUJARAT,22.925469,72.780088
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vadod BO,382433,BO,Delivery,AHMADABAD,GUJARAT,22.984029,72.788223
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bilasia BO,382330,BO,Delivery,AHMADABAD,GUJARAT,23.082749,72.666301
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Jetalpur BO,382427,BO,Delivery,AHMADABAD,GUJARAT,22.890486,72.597387
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Mahijada BO,382425,BO,Delivery,AHMADABAD,GUJARAT,22.828733,72.532756
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Muktipur BO,382425,BO,Delivery,AHMADABAD,GUJARAT,22.828117,72.553572
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Timba BO,382425,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gamdi BO,382435,BO,Delivery,AHMADABAD,GUJARAT,22.906222,72.636737
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shahwadi BO,382405,BO,Delivery,AHMADABAD,GUJARAT,22.963889,72.582218
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Vanch B.O,382449,BO,Delivery,AHMADABAD,GUJARAT,22.951372,72.679619
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Shilaj BO,380059,BO,Delivery,AHMADABAD,GUJARAT,23.05538,72.46927
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Chandkheda Society Area SO,382424,PO,Delivery,AHMADABAD,GUJARAT,23.107284,72.584648
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Juhapura SO,380055,PO,Delivery,AHMADABAD,GUJARAT,22.995413,72.528221
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Naranpura Vistar SO,380013,PO,Delivery,AHMADABAD,GUJARAT,23.052198,72.555163
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Navjivan SO,380014,PO,Non Delivery,AHMADABAD,GUJARAT,23.038852,72.568768
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sola H B C SO,380063,PO,Delivery,AHMADABAD,GUJARAT,23.03219,72.578457
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,South Bopal S.O,380057,PO,Delivery,AHMADABAD,GUJARAT,23.020833,72.473889
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Asarwa Chakla SO,380016,PO,Non Delivery,AHMADABAD,GUJARAT,23.043302,72.604989
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Asarwa Ext South SO,380024,PO,Non Delivery,AHMADABAD,GUJARAT,23.038923,72.62565
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Krishnanagar SO Ahmedabad,382345,PO,Non Delivery,AHMADABAD,GUJARAT,23.056124,72.643665
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Kuha SO,382433,PO,Delivery,AHMADABAD,GUJARAT,23.00097,72.795944
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Meghaningar SO,380016,PO,Non Delivery,AHMADABAD,GUJARAT,23.057106,72.61875
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Noblenagar SO,382340,PO,Non Delivery,AHMADABAD,GUJARAT,23.091374,72.653367
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sardarnagar SO,382475,PO,Delivery,AHMADABAD,GUJARAT,23.086591,72.638998
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Nana Chiloda SO,382330,PO,Non Delivery,AHMADABAD,GUJARAT,23.109229,72.660107
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Amraiwadi SO,380026,PO,Delivery,AHMADABAD,GUJARAT,23.010919,72.658903
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Bareja SO Ahmedabad,382425,PO,Delivery,AHMADABAD,GUJARAT,22.852197,72.589744
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Raikhad SO,380001,PO,Non Delivery,AHMADABAD,GUJARAT,23.019722,72.579146
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Gujarat High Court SO,380060,PO,Delivery,AHMADABAD,GUJARAT,23.079378,72.523469
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Thaltej SO,380059,PO,Delivery,AHMADABAD,GUJARAT,23.049067,72.511326
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,Sughad BO,382424,BO,Delivery,GANDHINAGAR,GUJARAT,23.121871,72.620085
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,NDC Ellisbridge,380010,PO,Delivery,NA,NA,23.018508,72.569819
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,NDC Maninagar,380011,PO,Delivery,NA,NA,22.998855,72.601144
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad City Division,NDC Naranpura Vistar,380012,PO,Delivery,NA,NA,23.052198,72.555163
+Gujarat Circle,Ahmedabad HQ Region,Ahmedabad GPO Division,Ahmedabad GPO,380001,HO,Delivery,AHMADABAD,GUJARAT,23.0281944,72.5833889
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rampur BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.73,72.48
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sahij BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.32,71.67
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Transad BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.69,72.45
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dadusar BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.69,72.4
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sindharej BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.76,72.4
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ambaliara BO,382225,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sherpura BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.73,72.39
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Salangpur  Hanuman BO,382450,BO,Delivery,AHMADABAD,GUJARAT,22.17,71.77
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Adroda BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.83,72.31
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chhabasar BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.8,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhanwada BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.73,72.73
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kerala BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.79,72.33
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rajoda BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.86,72.39
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rupal BO,382220,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sari BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.9,72.39
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ambli BO,382463,BO,Delivery,AHMADABAD,GUJARAT,23.03,72.48
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gogla BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.34,72.23
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Badarkha BO,382260,BO,Delivery,AHMADABAD,GUJARAT,22.85,72.45
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Moraiya BO,382213,BO,Delivery,AHMADABAD,GUJARAT,22.93,72.43
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasna  Chacharvadi BO,382213,BO,Delivery,AHMADABAD,GUJARAT,23.12,72.55
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dekawada BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.36,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kukvav BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.2,72.47
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rudatal BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.26,72.14
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ughroj BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.24,72.54
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Zanzarva BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.03,72.29
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Buranpur BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.39,72.23
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhanala BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.46,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gamph BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.37,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kamiala BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.42,72.21
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Andej BO,382115,BO,Delivery,AHMADABAD,GUJARAT,22.22,71.84
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chekhla BO,382115,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sobhasan BO,382145,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ingoli BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.61,72.48
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pisawada BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.65,72.47
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Deo Dholera BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.79,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhurkhi BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.58,72.24
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mithapur BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.64,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nani Boru BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.48,72.31
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sargwala BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.51,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dalod BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.36,71.97
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kunpur BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.37,72.01
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Navagam BO,382130,BO,Delivery,AHMADABAD,GUJARAT,22.38,72.28
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nayakpur BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.42,71.97
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ribadi BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.3,72.02
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vanpardi BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.38,71.97
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Varmor BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.36,71.9
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jeska BO,382250,BO,Delivery,AHMADABAD,GUJARAT,22.72,72.34
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sihor BO,382140,BO,Delivery,AHMADABAD,GUJARAT,22.97,72.29
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Goraj BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.98,72.32
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kunvar BO,382110,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rethal BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.9,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dumana BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.14,71.98
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Goraiya BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.14,7192
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Hansalpur BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.1,72.06
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jalampur BO,382150,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kamijala BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.95,72.01
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kankravadi BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.07,71.96
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ogan BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.07,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rangpur BO,382150,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Thori Mubarak BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.05,72.55
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vani BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.17,72.58
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bol BO,382170,BO,Delivery,AHMADABAD,GUJARAT,22.99,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khorajnanoda BO,382170,BO,Delivery,AHMADABAD,GUJARAT,23.03,72.71
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bavla SO,382220,PO,Delivery,AHMADABAD,GUJARAT,22.8293889,72.3638333
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lothal Bhurkhi RS SO,382230,PO,Delivery,AHMADABAD,GUJARAT,22.52,72.245377
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rampura SO Ahmedabad,382140,PO,Delivery,AHMADABAD,GUJARAT,23.28,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Virochannagar SO,382170,PO,Delivery,AHMADABAD,GUJARAT,23.09444,72.225479
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ranoda BO,382225,BO,Delivery,AHMADABAD,GUJARAT,23.48,72.79
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vautha BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.67,72.54
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kelia  Vasna BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.24,71.76
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Siawada BO,382225,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khambhada BO,382450,BO,Delivery,AHMADABAD,GUJARAT,22.17,71.8
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kundal BO,382450,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhayla BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.77,72.31
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dehgamda BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.78,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kocharia BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.8,72.32
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nani Devti BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.93,72.38
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gorasu BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.26,72.14
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kadipur BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.3,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kavitha BO,382260,BO,Delivery,AHMADABAD,GUJARAT,22.44,72.44
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Abasana BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.39,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gamanpura BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.36,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gunjar BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.36,71.92
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jaliya BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.73,72.48
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khadol BO,382460,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rayka BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.35,72.05
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rojka BO,382460,BO,Delivery,AHMADABAD,GUJARAT,23.3,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pipli BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.39,72.23
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nedharad BO,382115,BO,Delivery,AHMADABAD,GUJARAT,23.31,71.96
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bamroli BO,382145,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Moti Rantai BO,382145,BO,Delivery,AHMADABAD,GUJARAT,23.42,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ganol BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.59,72.44
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dholi BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.59,72.36
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rupgadh BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.63,72.34
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gundi Sarvodaya Ashram BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.57,72.22
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jawaraj BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.57,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Moti Boru BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.48,72.34
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Utelia BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.47,72.34
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhedasana BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.32,71.99
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nana Ubhada BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.28,71.98
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rakhiana BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.24,72.96
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Solgam BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.26,72.57
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Tagadi BO,382250,BO,Delivery,AHMADABAD,GUJARAT,23.27,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhadana BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.23,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Galsana BO,382245,BO,Delivery,AHMADABAD,GUJARAT,22.39,71.87
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kundal BO,382110,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Makhiav BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.95,72.24
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vekaria BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.83,72.06
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Asalgam BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.91,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Daslana BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.25,72.05
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhakdi BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.19,71.98
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Joshipura BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.21,72.11
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kumarkhan BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.92,72.02
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ukhlod BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.22,72.04
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dodar BO,382170,BO,Delivery,AHMADABAD,GUJARAT,23.07,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Iawa Vasna BO,382170,BO,Delivery,AHMADABAD,GUJARAT,23.03,72.32
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khoda BO,382170,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dholera SO,382455,PO,Delivery,AHMADABAD,GUJARAT,27.93,76.06
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Valdhera BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.95,72.01
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ambareli BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.65,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nesda BO,382225,BO,Delivery,AHMADABAD,GUJARAT,23.3,72.02
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Navda BO,382450,BO,Delivery,AHMADABAD,GUJARAT,22.17,71.97
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rojid BO,382450,BO,Delivery,AHMADABAD,GUJARAT,22.2,71.89
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chiada BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.76,72.35
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Modasar BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.91,72.36
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nanodara BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.83,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ranesar BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.77,72.28
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Salajada BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.8,72.39
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sankod BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.87,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chandisar BO,382260,BO,Delivery,AHMADABAD,GUJARAT,22.8,72.49
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Saroda BO,382260,BO,Delivery,AHMADABAD,GUJARAT,22.83,72.48
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Matoda BO,382213,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dabhsar BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.44,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nadishala BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.46,72.75
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sinaj BO,382120,BO,Delivery,AHMADABAD,GUJARAT,22.9,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Adval BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.45,72
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bajarda BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.5,71.98
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chhasiana BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.4,71.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kothadia BO,382460,BO,Delivery,AHMADABAD,GUJARAT,23.22,72.45
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Padana BO,382460,BO,Delivery,AHMADABAD,GUJARAT,23.37,71.9
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Zanzarka BO,382460,BO,Delivery,AHMADABAD,GUJARAT,23.05,72.25
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bavaliary BO,382455,BO,Delivery,AHMADABAD,GUJARAT,22.08,72.12
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhangadh BO,382455,BO,Delivery,AHMADABAD,GUJARAT,22.13,72.21
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sandhida BO,382455,BO,Delivery,AHMADABAD,GUJARAT,22.76,72.48
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhoyani BO,382145,BO,Delivery,AHMADABAD,GUJARAT,23.37,72.23
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Simej BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.62,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Varna BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.51,72.39
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Virdi BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.63,72.5
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kesardi BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.76,72.21
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Arnej BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.59,72.26
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Akru BO,382250,BO,Delivery,AHMADABAD,GUJARAT,22.28,72.01
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Parabadi BO,382250,BO,Delivery,AHMADABAD,GUJARAT,22.64,72.37
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Unchadi BO,382250,BO,Delivery,AHMADABAD,GUJARAT,23.16,72.03
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Zinzar BO,382250,BO,Delivery,AHMADABAD,GUJARAT,22.74,72.34
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ashoknagar BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.25,72.09
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ghatisana BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.3,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shivpura BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.25,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ukardi BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.34,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vagad BO,382245,BO,Delivery,AHMADABAD,GUJARAT,22.38,71.87
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pimpan BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.7,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Upardal BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.86,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhojwa BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.16,72.03
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jakwada BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.1,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khudad BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.2,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kokta BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.17,72.58
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Manipur BO,382150,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rahemalpur BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.08,72.53
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sarsavadi BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.32,72.7
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shahpur BO,382150,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Trent BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.22,72.01
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vanthal BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.98,72.03
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bakrana BO,382170,BO,Delivery,AHMADABAD,GUJARAT,22.97,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Siawada BO,382170,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasna  Iawa BO,382170,BO,Delivery,AHMADABAD,GUJARAT,22.74,72.5
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chaloda SO,382260,PO,Delivery,AHMADABAD,GUJARAT,22.78,72.46
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhandhuka SO,382460,PO,Delivery,AHMADABAD,GUJARAT,22.3818889,71.9828611
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Godhavi SO,382115,PO,Delivery,AHMADABAD,GUJARAT,23.0281944,72.5833889
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Katosan Road SO,382145,PO,Delivery,AHMADABAD,GUJARAT,23.4,72.24
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sanand SO,382110,PO,Delivery,AHMADABAD,GUJARAT,23,72.38
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dholka SO,382225,PO,Delivery,AHMADABAD,GUJARAT,22.72,72.4495
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jalalpur Vajifa BO,382225,BO,Delivery,AHMADABAD,GUJARAT,22.69,72.4
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sathal BO,382225,BO,Delivery,AHMADABAD,GUJARAT,23.26,72.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khamidana BO,382450,BO,Delivery,AHMADABAD,GUJARAT,22.16,71.93
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vadhela BO,382450,BO,Delivery,AHMADABAD,GUJARAT,22.16,71.97
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Otaria BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.25,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Otaria Sarvodaya Ashram BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.24,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sodhi BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.23,72.06
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Valinda BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.37,72.22
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Devtimoti BO,382213,BO,Delivery,AHMADABAD,GUJARAT,22.95,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gunjala BO,382120,BO,Delivery,AHMADABAD,GUJARAT,22.4,71.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Marusana BO,382120,BO,Delivery,AHMADABAD,GUJARAT,22.65,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sangpura BO,382120,BO,Delivery,AHMADABAD,GUJARAT,22.37,71.87
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasna BO,382460,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khun BO,382455,BO,Delivery,AHMADABAD,GUJARAT,23.19,72.45
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Panchhi BO,382455,BO,Delivery,AHMADABAD,GUJARAT,23.43,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Loliya BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.52,72.17
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Panchham BO,382465,BO,Delivery,AHMADABAD,GUJARAT,23.44,72.64
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shela BO,382465,BO,Delivery,AHMADABAD,GUJARAT,23.02,72.44
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Manipur B.O.,382115,BO,Delivery,AHMADABAD,GUJARAT,23.033925,74.425999
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sunvala BO,382145,BO,Delivery,AHMADABAD,GUJARAT,23.23,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Telavi BO,382145,BO,Delivery,AHMADABAD,GUJARAT,23.45,72.25
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vataman BO,382265,BO,Delivery,AHMADABAD,GUJARAT,22.54,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gangad BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.69,72.28
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bagodara BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.65,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bholad BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.46,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Durgi BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.79,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rohika BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.67,72.24
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shiyal BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.69,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vejalka BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.56,72.31
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kadvasan BO,382130,BO,Delivery,AHMADABAD,GUJARAT,22.51,72.17
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sher BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.32,72.74
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vinzuvada BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.07,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Devpura BO,382140,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kanz BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.31,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kointia BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.26,72.14
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Charel BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.98,72.25
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Daduka BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.92,72.18
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Fangadi BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.94,72.33
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jamp BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.82,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vinchhiya BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.93,72.29
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ghoda BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.96,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Karakthal BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.07,72.11
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Melaj BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.17,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sachana BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.08,72.17
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Thori Thumbha BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.01,72.57
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Thuleta BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.94,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vansva BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.23,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Zezra BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.04,72.71
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jholapur BO,382170,BO,Delivery,AHMADABAD,GUJARAT,22.99,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Zundal BO,382421,BO,Delivery,AHMADABAD,GUJARAT,23.14,72.58
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Hathijan BO,382308,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhadiad SO,382463,PO,Delivery,AHMADABAD,GUJARAT,27.93,76.06
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bordibazar Viramgam SO,382150,PO,Non Delivery,AHMADABAD,GUJARAT,23.1213333,72.0495
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Detroj SO,382120,PO,Delivery,AHMADABAD,GUJARAT,23.3356,72.18
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Fedra SO,382465,PO,Delivery,AHMADABAD,GUJARAT,22.466721,72.16
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mandal SO Ahmedabad,382130,PO,Delivery,AHMADABAD,GUJARAT,23.29,71.92
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhat SO,382428,PO,Delivery,AHMADABAD,GUJARAT,22.876669,72.463567
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sarandi BO,382225,BO,Delivery,AHMADABAD,GUJARAT,23.23,72.9
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rampura BO,382450,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Daran BO,382220,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rasam BO,382220,BO,Delivery,AHMADABAD,GUJARAT,22.85,72.39
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sangasar BO,382463,BO,Delivery,AHMADABAD,GUJARAT,22.2,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dadhana BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.4,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jalisana BO,382120,BO,Delivery,AHMADABAD,GUJARAT,22.69,72.43
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Odhav BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.46,71.99
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sadatpura BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.25,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vinchhan BO,382120,BO,Delivery,AHMADABAD,GUJARAT,23.07,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vithlpura BO,382120,BO,Delivery,AHMADABAD,GUJARAT,22.99,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kharad BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.95,72.69
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khasta BO,382460,BO,Delivery,AHMADABAD,GUJARAT,23.37,72.37
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Aniali Bhimji BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.33,71.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Salasar BO,382460,BO,Delivery,AHMADABAD,GUJARAT,22.39,71.88
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Hebatpur BO,382455,BO,Delivery,AHMADABAD,GUJARAT,22.36,71.94
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mingalpur BO,382455,BO,Delivery,AHMADABAD,GUJARAT,22.79,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kasindra BO,382465,BO,Delivery,AHMADABAD,GUJARAT,22.9,72.49
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Balsasan BO,382145,BO,Delivery,AHMADABAD,GUJARAT,23.42,72.28
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chuval Dangarva BO,382145,BO,Delivery,AHMADABAD,GUJARAT,23.39,72.25
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Madrisana BO,382145,BO,Delivery,AHMADABAD,GUJARAT,22.71,72.23
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Baldana BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.78,72.24
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bamsara BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.71,72.23
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kalyangadh BO,382240,BO,Delivery,AHMADABAD,GUJARAT,22.73,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhingada BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.58,72.2
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jakhada BO,382230,BO,Delivery,AHMADABAD,GUJARAT,22.47,72.34
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Endla BO,382130,BO,Delivery,AHMADABAD,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sitapur BO,382130,BO,Delivery,AHMADABAD,GUJARAT,23.32,72.69
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhankoda BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.29,72.12
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chhaniar BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.32,72.12
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Panar BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.24,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pandharpura BO,382140,BO,Delivery,AHMADABAD,GUJARAT,23.45,72.6
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kaneti BO,382110,BO,Delivery,AHMADABAD,GUJARAT,23.01,72.4
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mankol BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.9,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Moti  Kishol BO,382110,BO,Delivery,AHMADABAD,GUJARAT,22.85,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chandranagar BO,382150,BO,Delivery,AHMADABAD,GUJARAT,22.93,72.42
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Hirapura BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.16,72.15
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Junapadhar BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.2,72.04
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vadgas BO,382150,BO,Delivery,AHMADABAD,GUJARAT,23.09,71.95
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chharodi BO,382170,BO,Delivery,AHMADABAD,GUJARAT,23.05,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kalana BO,382170,BO,Delivery,AHMADABAD,GUJARAT,23.03,72.25
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhadaj B.O,382722,BO,Delivery,AHMADABAD,GUJARAT,23.097922,72.487001
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Changodar SO,382213,PO,Delivery,AHMADABAD,GUJARAT,22.9293,72.4477
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kauka SO,382265,PO,Delivery,AHMADABAD,GUJARAT,22.62,72.442398
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Koth SO,382240,PO,Delivery,AHMADABAD,GUJARAT,22.65,72.3
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Viramgam SO,382150,PO,Delivery,AHMADABAD,GUJARAT,23.1264167,72.0525
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dantali B.O,382122,BO,Delivery,GANDHINAGAR,GUJARAT,23.2578819,72.4728966
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Antoli B.O,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.191124,72.952012
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Suja na Muvada B.O,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.176117,72.890379
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Simandhar City BO,382010,BO,Non Delivery,GANDHINAGAR,GUJARAT,23.22,73.47
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chiskari BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.13,72.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ghamij BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.06,72.84
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Siawada BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chandrala BO,382321,BO,Delivery,GANDHINAGAR,GUJARAT,23.35,72.78
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Galudan BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.4,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Magodi BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vadodara BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.08,72.17
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Valad BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.19,72.04
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Amrajinamuvada BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,23.13,72.86
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kadodara BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.9,72.49
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Karoli BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,23.1,72.53
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lihoda BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.2,72.9
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Udan BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.3,72.9
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Palsana BO,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.46,72.64
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Delvada BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,23.51,72.68
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lakroda BO,382835,BO,Delivery,GANDHINAGAR,GUJARAT,23.44,72.79
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bapupura BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.46,72.64
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Indrapura BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,22.89,72.42
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kharana BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.42,72.28
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vagosana BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.2,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Golthara BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,23.37,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Soja BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,23.83,72.06
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Veda   Paliyed BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,22.99,72.03
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mokhasan BO,382740,BO,Delivery,GANDHINAGAR,GUJARAT,22.57,72.27
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Gujarat HO,382010,HO,Delivery,GANDHINAGAR,GUJARAT,23.221549,72.648661
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 16 SO,382016,PO,Delivery,GANDHINAGAR,GUJARAT,23.229961,72.647931
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 19 SO,382021,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.224704,72.665999
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 29 SO,382021,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.242555,72.661997
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 8 SO,382007,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.209118,72.649184
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,BSF GANDHINAGAR SO,382045,PO,Delivery,GANDHINAGAR,GUJARAT,23.249441,72.702508
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Randheja SO,382620,PO,Delivery,GANDHINAGAR,GUJARAT,23.292107,72.639754
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,NDC Gandhinagar,382030,PO,Delivery,GANDHINAGAR,GUJARAT,23.227056,72.659067
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,IIT Gandhinagar SO,382055,PO,Delivery,GANDHINAGAR,GUJARAT,23.12411,72.41121
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shantigram S.O,382501,PO,Delivery,GANDHINAGAR,GUJARAT,23.163873,72.5395307
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Juval Rupavati BO,382220,BO,Delivery,GANDHINAGAR,GUJARAT,22.8,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kolavada BO,382028,BO,Delivery,GANDHINAGAR,GUJARAT,23.27,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Baria BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.11,72.96
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Hilol BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.04,72.88
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kanipur BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.05,72.87
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chekhala Pagi BO,382321,BO,Delivery,GANDHINAGAR,GUJARAT,23.33,72.83
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Giyod BO,382321,BO,Delivery,GANDHINAGAR,GUJARAT,23.34,72.13
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dashela BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.27,72.73
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhanap BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.13,72.86
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Isanpurmota BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,22.26,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lavarpur BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,22.65,72.47
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shiholi Moti BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,22.92,72.18
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jalia No Math BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.79,72.46
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mota Jalundra BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.86,72.07
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nandol BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,23.36,71.97
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vadvasa BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jamiyatpura BO,382423,BO,Delivery,GANDHINAGAR,GUJARAT,23.18,72.55
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shertha BO,382423,BO,Delivery,GANDHINAGAR,GUJARAT,22.98,72.25
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jindva BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.22,72.95
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Masang Moti BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.27,72.98
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sametri BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.25,72.9
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sampa BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.2,72.88
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jakhora BO,382320,BO,Delivery,GANDHINAGAR,GUJARAT,23.32,72.74
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Motipura B.O,382320,BO,Delivery,GANDHINAGAR,GUJARAT,23.339825,72.752753
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Limbodra BO,382650,BO,Delivery,GANDHINAGAR,GUJARAT,23.39,72.67
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Serisa B.O,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.203747,72.467217
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jaspur BO,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.17,72.51
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Borisana B.O,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.226681,72.484413
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Balva B.O,382650,BO,Delivery,GANDHINAGAR,GUJARAT,23.356126,72.660921
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ajol BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,23.49,72.68
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Padusma BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,23.5,72.62
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khoraj BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,23.43,72.24
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Paliyed  Veda BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,23.39,72.55
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Veda BO,382855,BO,Delivery,GANDHINAGAR,GUJARAT,23.53,72.71
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kalol HO,382721,HO,Delivery,GANDHINAGAR,GUJARAT,23.2422778,72.499
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 28 SO,382028,PO,Delivery,GANDHINAGAR,GUJARAT,23.246814,72.656311
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Adalaj SO,382421,PO,Delivery,GANDHINAGAR,GUJARAT,23.167516,72.585333
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dabhoda SO,382355,PO,Delivery,GANDHINAGAR,GUJARAT,23.174866,72.749941
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dehgam SO,382305,PO,Delivery,GANDHINAGAR,GUJARAT,23.171838,72.821509
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Unava  Balva SO,382650,PO,Delivery,GANDHINAGAR,GUJARAT,23.347624,72.657673
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Charada SO,382810,PO,Delivery,GANDHINAGAR,GUJARAT,23.4895,72.65
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kalol Society Area SO,382721,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.23,72.49
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pundhara SO,382855,PO,Delivery,GANDHINAGAR,GUJARAT,23.5,72.74
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Santej SO,382722,PO,Delivery,GANDHINAGAR,GUJARAT,23.101893,72.474632
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Raysan B.O,382426,BO,Delivery,GANDHINAGAR,GUJARAT,23.42,72.55
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Randesan B.O,382426,BO,Delivery,GANDHINAGAR,GUJARAT,23.1763,72.6543
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Motipura BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.16,72.98
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Palundra BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.13,72.88
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasna  Sogthi BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.12,72.95
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Halisa BO,382321,BO,Delivery,GANDHINAGAR,GUJARAT,22.42,72.04
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chiloda BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.29,72.78
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Anguthala BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,23.24,72.84
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Harkhji Na Muvada BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.4,72.05
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Piplaj BO,382650,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Patna Kuva BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.3,72.87
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Piplaj BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Tintoda BO,382422,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jethlaj B.O,382722,BO,Delivery,GANDHINAGAR,GUJARAT,23.136068,72.430545
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Piyaj B.O,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.23228,72.442018
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bilodra BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,23.53,72.65
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vihar BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,23.55,72.65
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Samau BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Boru BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.43,72.57
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Fatepura BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.3,72.22
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Itadar BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,22.26,72.19
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Isand BO,382740,BO,Delivery,GANDHINAGAR,GUJARAT,22.13,72.21
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Anodia BO,382855,BO,Delivery,GANDHINAGAR,GUJARAT,23.48,72.79
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mahudi BO,382855,BO,Delivery,GANDHINAGAR,GUJARAT,22.58,72.36
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 23 SO,382016,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.237684,72.650271
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 24 SO,382016,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.241977,72.643205
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chhala SO,382321,PO,Delivery,GANDHINAGAR,GUJARAT,23.307225,72.77519
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kasturinagar SO,382423,PO,Delivery,GANDHINAGAR,GUJARAT,23.24286,72.503051
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,New Sachivalaya Complex SO,382010,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.220275,72.658402
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pethapur SO,382610,PO,Delivery,GANDHINAGAR,GUJARAT,23.266403,72.677393
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gift City SO,382050,PO,Delivery,GANDHINAGAR,GUJARAT,23.165464,72.679741
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Koba SO,382426,PO,Delivery,GANDHINAGAR,GUJARAT,23.150284,72.640987
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lodra SO,382835,PO,Delivery,GANDHINAGAR,GUJARAT,23.46,72.71843
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mansa Bazar SO,382845,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.44,72.65
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mansa SO Gandhi Nagar,382845,PO,Delivery,GANDHINAGAR,GUJARAT,23.98,72.4
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Juval BO,382220,BO,Delivery,GANDHINAGAR,GUJARAT,22.88,72.31
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Indroda BO,382007,BO,Delivery,GANDHINAGAR,GUJARAT,23.21,72.66
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ambapur BO,382421,BO,Delivery,GANDHINAGAR,GUJARAT,23.16,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sargasan BO,382419,BO,Delivery,GANDHINAGAR,GUJARAT,23.19,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Isanpurdodia BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.11,72.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Nana Jalundra BO,382321,BO,Delivery,GANDHINAGAR,GUJARAT,23.47,72.67
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasnachaudhary BO,382321,BO,Delivery,GANDHINAGAR,GUJARAT,23.31,72.81
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,MAHUNDRA BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.241529,72.7492
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sanoda BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,23.22,72.95
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kadjodara BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.21,72.94
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khanpur BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.22,72.89
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Navanagar BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rakhial BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.26,72.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sahebji Na  Muvada BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.24,72.94
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dolarana Vasna BO,382320,BO,Delivery,GANDHINAGAR,GUJARAT,23.31,72.7
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Madhavgadh BO,382320,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Amrapur Gram Bharti BO,382650,BO,Delivery,GANDHINAGAR,GUJARAT,23.38,72.69
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhoyan Rathod BO,382422,BO,Delivery,GANDHINAGAR,GUJARAT,23.24,72.54
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pundrasan BO,382422,BO,Delivery,GANDHINAGAR,GUJARAT,23.24,72.58
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ramnagar B.O,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.2443,72.5036
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Saij BO,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.23,72.52
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ridrol BO,382835,BO,Delivery,GANDHINAGAR,GUJARAT,23.46,72.67
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Badpura BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.42,72.71
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dholakuva BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.2,72.64
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Manekpura BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,22.76,72.21
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Parbatpura BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.59,72.54
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pratapnagar BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.41,72.55
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Jamla BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kotha BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,23.24,72.46
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dhamasana BO,382740,BO,Delivery,GANDHINAGAR,GUJARAT,23.17,72.76
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 17 SO,382016,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.22798,72.65355
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 22 SO,382021,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.234264,72.657464
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 30 SO,382021,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.239408,72.667223
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 6 SO,382006,PO,Delivery,GANDHINAGAR,GUJARAT,23.216358,72.637315
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 7 SO,382007,PO,Delivery,GANDHINAGAR,GUJARAT,23.208955,72.641733
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rakhial RS SO,382315,PO,Delivery,GANDHINAGAR,GUJARAT,23.022098,72.634327
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sardhav SO,382640,PO,Delivery,GANDHINAGAR,GUJARAT,23.299181,72.572443
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Thermal Power Station SO,382041,PO,Delivery,GANDHINAGAR,GUJARAT,23.251184,72.673767
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vidhansabha SO,382010,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.219152,72.656974
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kudasan SO,382419,PO,Delivery,GANDHINAGAR,GUJARAT,23.181648,72.628462
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lavad SO,382305,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.15178,72.88058
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rancharada BO,382115,BO,Delivery,GANDHINAGAR,GUJARAT,22.25,71.91
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vavol BO,382016,BO,Delivery,GANDHINAGAR,GUJARAT,23.23,72.62
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Kasturba Vidyalaya B.O,382426,BO,Delivery,GANDHINAGAR,GUJARAT,23.15,72.64
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Por BO,382421,BO,Delivery,GANDHINAGAR,GUJARAT,23.18,72.61
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Devkaran Na Muvada BO,382308,BO,Delivery,GANDHINAGAR,GUJARAT,23.14,72.95
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Alampur BO,382042,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Lekawada BO,382042,BO,Delivery,GANDHINAGAR,GUJARAT,22.62,72.41
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Palaj BO,382055,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Prantiya BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,23.38,72.58
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Shahpur BO,382355,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bardolikoti BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,23.08,72.84
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Harsoli BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.34,72.01
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Salki BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.4,71.68
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasna Rathod BO,382305,BO,Delivery,GANDHINAGAR,GUJARAT,22.95,72.1
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Pindarda BO,382650,BO,Delivery,GANDHINAGAR,GUJARAT,23.41,72.59
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dharisana BO,382315,BO,Delivery,GANDHINAGAR,GUJARAT,23.27,72.85
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Adrajmoti BO,382640,BO,Delivery,GANDHINAGAR,GUJARAT,23.26,72.57
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vasan BO,382650,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Mubarakpura BO,382650,BO,Delivery,GANDHINAGAR,GUJARAT,23.36,72.69
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Vadsar B.O,382722,BO,Delivery,GANDHINAGAR,GUJARAT,23.155609,72.472412
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bhoyan Moti B.O,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.179131,72.451027
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Hajipur B.O,382725,BO,Delivery,GANDHINAGAR,GUJARAT,23.86261,72.19243
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khatraj B.O,382722,BO,Delivery,GANDHINAGAR,GUJARAT,23.143539,72.445663
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Chadasana BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Solaiya BO,382810,BO,Delivery,GANDHINAGAR,GUJARAT,23.46,72.62
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rangpur BO,382835,BO,Delivery,GANDHINAGAR,GUJARAT,NA,NA
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Varsoda BO,382835,BO,Delivery,GANDHINAGAR,GUJARAT,23.43,72.74
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Ambod BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.42,72.71
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Parsa BO,382845,BO,Delivery,GANDHINAGAR,GUJARAT,23.41,72.62
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Amja BO,382735,BO,Delivery,GANDHINAGAR,GUJARAT,23.36,72.62
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Dingucha BO,382740,BO,Delivery,GANDHINAGAR,GUJARAT,23.16,72.87
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Khadat BO,382855,BO,Delivery,GANDHINAGAR,GUJARAT,22.25,71.73
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 21 SO,382021,PO,Delivery,GANDHINAGAR,GUJARAT,23.230995,72.667645
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 9 SO,382007,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.210365,72.658424
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Bahiyal SO,382308,PO,Delivery,GANDHINAGAR,GUJARAT,23.072834,72.885467
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,CRPF Campus G Nagar SO,382042,PO,Delivery,GANDHINAGAR,GUJARAT,23.342534,72.693459
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Rupal SO,382630,PO,Delivery,GANDHINAGAR,GUJARAT,23.312227,72.595575
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Sadra SO,382320,PO,Delivery,GANDHINAGAR,GUJARAT,23.342591,72.730393
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Uvarsad SO,382422,PO,Delivery,GANDHINAGAR,GUJARAT,23.159851,72.614177
+Gujarat Circle,Ahmedabad HQ Region,Gandhinagar Division,Gandhinagar Sector 3 SO,382006,PO,Non Delivery,GANDHINAGAR,GUJARAT,23.206166,72.633113
