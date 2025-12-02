@@ -26,6 +26,7 @@ GOOGLE_CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET')
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://cityshield.onrender.com"
 ]
 CORS_ALLOW_CREDENTIALS = True
 
