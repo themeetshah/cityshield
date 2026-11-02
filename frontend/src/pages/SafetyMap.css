@@ -1,0 +1,50 @@
+/* Safety map page - every rule is scoped to .safety-map-page so nothing leaks into other pages. */
+
+.safety-map-page .safety-map-frame {
+    position: relative;
+    height: 70vh;
+    min-height: 420px;
+    background: #f8fafc;
+}
+
+.safety-map-page .safety-map-frame.picking .leaflet-container {
+    cursor: crosshair;
+}
+
+@media (max-width: 768px) {
+    .safety-map-page .safety-map-frame {
+        height: 60vh;
+        min-height: 360px;
+    }
+
+    .safety-map-page .leaflet-popup-content {
+        margin: 8px 10px;
+        font-size: 0.875rem;
+        max-width: 240px;
+    }
+
+    /* Keep the routing itinerary toggle small on phones. */
+    .safety-map-page .leaflet-routing-container {
+        max-width: 70vw;
+    }
+}
+
+.safety-map-page .leaflet-popup-content-wrapper {
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.safety-map-page .cs-marker-wrapper {
+    background: transparent;
+    border: none;
+}
+
+.safety-map-page .cs-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
