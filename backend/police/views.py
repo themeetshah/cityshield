@@ -211,6 +211,15 @@ def assign_team_to_sos(request, sos_id):
             f'{sos.emergency_type.replace("_", " ").title()} at {sos.latitude:.5f}, {sos.longitude:.5f}.',
             '/',
         ))
+        if sos.user_id:
+            owner = sos.user
+            station = team.station.name if team.station_id else 'the police'
+            transaction.on_commit(lambda: notify(
+                owner,
+                'Police team assigned to your SOS',
+                f'Team {team.team_id} from {station} has been assigned and is on the way.',
+                '/',
+            ))
 
     response = SOSResponse.objects.select_related('assigned_team__station').get(pk=response.pk)
     return Response({'message': f'Team {team.team_id} assigned to SOS #{sos.id}',

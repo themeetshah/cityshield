@@ -22,7 +22,7 @@ export const defaultMarkerIcon = new L.Icon({
     shadowSize: [41, 41],
 });
 
-export const OSM_TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+export const OSM_TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 export const OSM_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 /** Viewport used only when no position is known yet (it is never presented as the user's location). */

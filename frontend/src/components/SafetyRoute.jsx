@@ -4,16 +4,17 @@ import L from 'leaflet';
 import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
-// Public OSRM demo server: fine for a student project, may be slow or down -
-// callers get onRoutingError and should fall back gracefully.
-const OSRM_URL = 'https://router.project-osrm.org/route/v1';
+// OpenStreetMap-hosted OSRM (FOSSGIS, fair-use). It can be slow or down - callers get
+// onRoutingError and fall back to a straight line. (The project-osrm.org demo server
+// logs a "not suitable for production" warning on every request.)
+const OSRM_URL = 'https://routing.openstreetmap.de/routed-car/route/v1';
 
 /**
  * Draws a driving route from `start` to `end` ({latitude, longitude}) on the
  * surrounding react-leaflet map. Reports `{ routeId, distance, duration }`
  * (metres / seconds) through onRouteFound, and `(error, routeId)` through onRoutingError.
  */
-const SafetyRoute = ({ start, end, routeId = null, color = '#DC2626', onRouteFound, onRoutingError }) => {
+const SafetyRoute = ({ start, end, routeId = null, color = '#DC2626', lineStyles = null, onRouteFound, onRoutingError }) => {
     const map = useMap();
     const callbacks = useRef({ onRouteFound, onRoutingError, routeId });
 
@@ -25,6 +26,8 @@ const SafetyRoute = ({ start, end, routeId = null, color = '#DC2626', onRouteFou
     const startLng = start?.longitude;
     const endLat = end?.latitude;
     const endLng = end?.longitude;
+    // Serialised so callers can pass a fresh array literal without re-creating the route.
+    const stylesKey = JSON.stringify(lineStyles || [{ color, weight: 6, opacity: 0.85 }]);
 
     useEffect(() => {
         if (![startLat, startLng, endLat, endLng].every(Number.isFinite)) return undefined;
@@ -39,7 +42,7 @@ const SafetyRoute = ({ start, end, routeId = null, color = '#DC2626', onRouteFou
             show: false,
             collapsible: true,
             createMarker: () => null,
-            lineOptions: { styles: [{ color, weight: 6, opacity: 0.85 }] },
+            lineOptions: { styles: JSON.parse(stylesKey), addWaypoints: false },
         });
 
         control.on('routesfound', (event) => {
@@ -67,7 +70,7 @@ const SafetyRoute = ({ start, end, routeId = null, color = '#DC2626', onRouteFou
                 // control already detached together with the map
             }
         };
-    }, [map, startLat, startLng, endLat, endLng, color]);
+    }, [map, startLat, startLng, endLat, endLng, stylesKey]);
 
     return null;
 };

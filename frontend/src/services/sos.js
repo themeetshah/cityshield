@@ -199,3 +199,13 @@ const sosService = {
 };
 
 export default sosService;
+
+/** In-app Safety Map URL that follows an SOS live (lat/lng = last known position, optional). */
+export const sosTrackingPath = (sosId, latitude, longitude) => {
+    const params = new URLSearchParams({ sos: String(sosId) });
+    if (Number.isFinite(Number(latitude)) && Number.isFinite(Number(longitude))) {
+        params.set('lat', String(latitude));
+        params.set('lng', String(longitude));
+    }
+    return `/safety-map?${params}`;
+};

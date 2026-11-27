@@ -15,8 +15,8 @@ from rest_framework.test import APITestCase
 from reports.models import Report
 from users.models import User
 
-from . import overpass, risk
-from .models import Hospital, PoliceStation, SafetyZone
+from . import overpass, risk, sync
+from .models import FacilitySyncArea, Hospital, PoliceStation, SafetyZone
 
 LAT, LNG = 23.0225, 72.5714
 OVERPASS_SAMPLE = {
@@ -117,7 +117,8 @@ class WriteEndpointPermissionTests(SafetyBase):
         self.client.force_authenticate(self.superadmin)
         response = self.client.post('/api/safety/sync-facilities/', {'latitude': LAT, 'longitude': LNG}, format='json')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual((response.data['hospitals_saved'], response.data['police_stations_saved']), (1, 1))
+        self.assertEqual(response.data['hospitals']['created'], 1)
+        self.assertEqual(response.data['police_stations']['created'], 1)
         self.assertEqual(self.client.get('/api/safety/export-facilities/').data['count'], 2)
 
 
@@ -125,33 +126,18 @@ class FacilityTests(SafetyBase):
     def setUp(self):
         super().setUp()
         self.client.force_authenticate(self.citizen)
-        PoliceStation.objects.create(name='DB Station', latitude=LAT, longitude=LNG + 0.002, source='csv')
+        PoliceStation.objects.create(name='DB Station', latitude=LAT, longitude=LNG + 0.002, source='manual')
         PoliceStation.objects.create(name='Far Station', latitude=LAT + 1, longitude=LNG)
+        PoliceStation.objects.create(name='Closed Station', latitude=LAT, longitude=LNG, is_active=False)
 
     @mock.patch('safety.overpass.requests.post')
-    def test_merges_db_and_osm_and_caches(self, mock_post):
-        mock_post.return_value = overpass_response()
-        url = f'/api/safety/nearby-facilities/?latitude={LAT}&longitude={LNG}&radius=2000'
-        data = self.client.get(url).data
-        self.assertEqual([p['name'] for p in data['police_stations']], ['DB Station'])  # OSM duplicate dropped
-        self.assertEqual([h['name'] for h in data['hospitals']], ['City Hospital'])
-        self.assertEqual(data['sources'], ['database', 'openstreetmap'])
+    def test_read_path_is_database_only(self, mock_post):
+        data = self.client.get(f'/api/safety/nearby-facilities/?latitude={LAT}&longitude={LNG}&radius=2000').data
+        self.assertEqual([p['name'] for p in data['police_stations']], ['DB Station'])  # inactive + far excluded
         self.assertEqual(data['warnings'], [])
-        self.client.get(url)
-        self.client.get(f'/api/safety/nearby-facilities/?latitude={LAT + 0.0005}&longitude={LNG}&radius=2000')
-        self.assertEqual(mock_post.call_count, 1)
-        self.assertEqual(Hospital.objects.count(), 0)  # read path never writes
+        mock_post.assert_not_called()  # auto-sync is disabled in tests; never called inline
 
-    @mock.patch('safety.overpass.requests.post', side_effect=requests.ConnectionError)
-    def test_overpass_down_returns_db_data_with_warning(self, _):
-        data = self.client.get(f'/api/safety/nearby-police/?latitude={LAT}&longitude={LNG}').data
-        self.assertEqual(data['count'], 1)
-        self.assertEqual(data['sources'], ['database'])
-        self.assertTrue(data['warnings'])
-
-    @mock.patch('safety.overpass.requests.post')
-    def test_post_still_supported_and_radius_clamped(self, mock_post):
-        mock_post.return_value = overpass_response({'elements': []})
+    def test_post_still_supported_and_radius_clamped(self):
         response = self.client.post('/api/safety/nearby-facilities/',
                                     {'latitude': LAT, 'longitude': LNG, 'radius': 10**9}, format='json')
         self.assertEqual(response.status_code, 200)
@@ -248,3 +234,68 @@ class ImportCommandTests(TestCase):
     def test_missing_file(self):
         with self.assertRaises(CommandError):
             call_command('import_police_stations', csv='does-not-exist.csv', stdout=io.StringIO())
+
+
+class FacilitySyncTests(TestCase):
+    BBOX = (LAT - 0.05, LNG - 0.05, LAT + 0.05, LNG + 0.05)
+
+    def run_sync(self, payload):
+        with mock.patch('safety.overpass.requests.post', return_value=overpass_response(payload)):
+            return sync.sync_bbox(*self.BBOX, key='test-area', label='Test')
+
+    def test_creates_then_updates_moved_and_renamed_facility(self):
+        summary = self.run_sync(OVERPASS_SAMPLE)
+        self.assertEqual(summary['police_stations']['created'], 1)
+        moved = {'elements': [
+            {'type': 'way', 'id': 2, 'center': {'lat': LAT + 0.003, 'lon': LNG + 0.004},
+             'tags': {'amenity': 'police', 'name': 'Navrangpura Police Station'}},
+            OVERPASS_SAMPLE['elements'][0],
+        ]}
+        summary = self.run_sync(moved)
+        self.assertEqual(summary['police_stations'], {'found': 1, 'created': 0, 'updated': 1, 'deactivated': 0})
+        station = PoliceStation.objects.get(osm_type='way', osm_id=2)
+        self.assertEqual(station.name, 'Navrangpura Police Station')
+        self.assertAlmostEqual(station.latitude, LAT + 0.003)
+        self.assertEqual(PoliceStation.objects.count(), 1)
+
+    def test_removed_from_osm_is_deactivated_not_deleted(self):
+        self.run_sync(OVERPASS_SAMPLE)
+        summary = self.run_sync({'elements': [OVERPASS_SAMPLE['elements'][0]]})
+        self.assertEqual(summary['police_stations']['deactivated'], 1)
+        self.assertFalse(PoliceStation.objects.get(osm_id=2).is_active)
+        # comes back if it reappears
+        self.run_sync(OVERPASS_SAMPLE)
+        self.assertTrue(PoliceStation.objects.get(osm_id=2).is_active)
+
+    def test_adopts_legacy_row_keeping_foreign_keys(self):
+        legacy = PoliceStation.objects.create(name='Old name', latitude=LAT + 0.0002, longitude=LNG + 0.002,
+                                              source='overpass')
+        officer = User.objects.create_user(email='o@x.com', password='x', role='police', police_station=legacy)
+        self.run_sync(OVERPASS_SAMPLE)
+        self.assertEqual(PoliceStation.objects.count(), 1)
+        officer.refresh_from_db()
+        self.assertEqual(officer.police_station.osm_id, 2)
+        self.assertEqual(officer.police_station.name, 'Navrangpura PS')
+
+    def test_tries_next_mirror_and_records_failure(self):
+        ok = overpass_response(OVERPASS_SAMPLE)
+        with mock.patch('safety.overpass.requests.post', side_effect=[requests.Timeout(), ok]) as post:
+            sync.sync_bbox(*self.BBOX, key='mirror', label='m')
+        self.assertEqual(post.call_count, 2)
+        with mock.patch('safety.overpass.requests.post', side_effect=requests.Timeout()):
+            with self.assertRaises(overpass.OverpassError):
+                sync.sync_bbox(*self.BBOX, key='down', label='d')
+        self.assertTrue(FacilitySyncArea.objects.get(key='down').last_error)
+
+    def test_hospital_tagged_with_healthcare_only(self):
+        payload = {'elements': [{'type': 'node', 'id': 9, 'lat': LAT, 'lon': LNG,
+                                 'tags': {'healthcare': 'hospital', 'name:en': 'Civil Hospital', 'name': 'સિવિલ'}}]}
+        self.run_sync(payload)
+        self.assertEqual(Hospital.objects.get().name, 'Civil Hospital')
+
+    def test_management_command(self):
+        with mock.patch('safety.overpass.geocode_area', return_value=(self.BBOX, 'Testcity, India')),                 mock.patch('safety.overpass.requests.post', return_value=overpass_response(OVERPASS_SAMPLE)):
+            out = io.StringIO()
+            call_command('sync_facilities', 'Testcity', stdout=out)
+        self.assertIn('1 new', out.getvalue())
+        self.assertEqual(FacilitySyncArea.objects.get(key='place:testcity').police_count, 1)

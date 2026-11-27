@@ -16,6 +16,8 @@ htmlcov/
 # --- django local data (never commit real user data) ---
 backend/db.sqlite3
 backend/db.sqlite3-journal
+backend/db.sqlite3-wal
+backend/db.sqlite3-shm
 backend/media/
 backend/private_media/
 backend/staticfiles/

@@ -5,3 +5,7 @@ django-cors-headers==4.9.0
 python-dotenv==1.2.4
 requests==2.34.2
 google-auth==2.62.0
+psycopg[binary]==3.3.9
+dj-database-url==3.1.2
+django-storages[s3]==1.14.6
+boto3==1.44.12

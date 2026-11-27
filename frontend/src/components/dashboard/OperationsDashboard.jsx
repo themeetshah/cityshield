@@ -159,8 +159,8 @@ const OperationsDashboard = () => {
 
     return (
         <div className="min-h-screen bg-slate-50">
-            <Navbar />
-            <div className="w-full mx-auto max-w-[1600px] p-2 sm:p-4 lg:p-6 space-y-3 lg:space-y-4">
+            <Navbar width="max-w-[1600px]" />
+            <div className="w-full mx-auto max-w-[1600px] px-4 py-2 sm:px-6 sm:py-4 lg:px-8 lg:py-6 space-y-3 lg:space-y-4">
                 <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
                         <h1 className="text-xl sm:text-2xl font-bold text-slate-900">{title}</h1>

@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import {
-    AlertTriangle, ArrowLeft, Building2, Calendar, CheckCircle, ChevronRight, Clock, Copy, ExternalLink,
+    AlertTriangle, ArrowLeft, Building2, Calendar, CheckCircle, ChevronRight, Clock, Copy,
     EyeOff, MapPin, MessageSquare, Printer, Share2, User,
 } from 'lucide-react';
 import Navbar from '../components/common/Navbar';
@@ -134,14 +134,16 @@ const LocationCard = ({ report }) => (
                     {report.location && <p className="text-gray-900 font-semibold break-words">{report.location}</p>}
                     <p className="text-xs text-gray-500 mt-1 font-mono">Coordinates: {report.latitude}, {report.longitude}</p>
                 </div>
-                <a
-                    href={`https://www.openstreetmap.org/?mlat=${report.latitude}&mlon=${report.longitude}#map=16/${report.latitude}/${report.longitude}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <Link
+                    to="/safety-map"
+                    state={{
+                        navigationType: 'view',
+                        focusLocation: { latitude: Number(report.latitude), longitude: Number(report.longitude), name: report.title },
+                    }}
                     className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shrink-0"
                 >
-                    <ExternalLink className="w-4 h-4" aria-hidden="true" /> Open in maps
-                </a>
+                    <MapPin className="w-4 h-4" aria-hidden="true" /> View on Safety Map
+                </Link>
             </div>
         </div>
     </section>

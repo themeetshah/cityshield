@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { AlertTriangle, BarChart3, Building2, FileText, RefreshCw, UserCheck } from 'lucide-react';
-import Navbar from '../components/common/Navbar';
+import { AlertTriangle, BarChart3, Building2, CheckCircle2, FileText, RefreshCw, UserCheck } from 'lucide-react';
+import { PageHeader, PageShell, StatusChip } from '../components/common/PageShell';
+import { IconChip } from '../components/dashboard/home/ui';
+import { primaryButton, secondaryButton } from '../components/dashboard/home/styles';
 import { useAuth } from '../context/AuthContext';
 import { isSuperAdmin, isVolunteer } from '../auth/roles';
 import useGeolocation from '../hooks/useGeolocation';
 import { errorMessage } from '../services/api';
 import { fetchNearbyReports } from '../services/reports';
-import { getSOSByRole, getVolunteerStatus, respondToSOS, setVolunteerAvailability } from '../services/sos';
+import { getSOSByRole, getVolunteerStatus, respondToSOS, setVolunteerAvailability, sosTrackingPath } from '../services/sos';
 import { getOfficialAlerts } from '../services/community';
 import { profileAPI } from '../services/profile';
 import usePolling from './community/usePolling';
@@ -47,12 +49,18 @@ const TABS = [
     { key: 'insights', label: 'Insights', icon: BarChart3 },
 ];
 
-const StatTile = ({ label, value }) => (
-    <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
-        <div className="text-2xl font-black text-gray-900">{value}</div>
-        <div className="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-1">{label}</div>
+const StatTile = ({ label, value, icon: Icon, tone }) => (
+    <div className="flex items-center gap-4 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200 sm:p-5">
+        <span className="hidden sm:inline-flex"><IconChip icon={Icon} tone={tone} /></span>
+        <div className="min-w-0">
+            <div className="text-2xl font-black tabular-nums tracking-tight text-slate-900 sm:text-3xl">{value}</div>
+            <div className="text-xs font-semibold leading-snug text-slate-500 sm:text-sm">{label}</div>
+        </div>
     </div>
 );
+
+const selectClass =
+    'rounded-xl bg-white px-3 py-2 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500';
 
 const Community = () => {
     const { user } = useAuth();
@@ -168,6 +176,11 @@ const Community = () => {
 
     // ---- actions ------------------------------------------------------------
     const handleRoute = (item, type) => {
+        if (type === 'sos') {
+            // Follow the person live in the in-app map (the route updates as they move).
+            navigate(sosTrackingPath(item.id, item.latitude, item.longitude));
+            return;
+        }
         if (!location) {
             toast.error('Your location is unavailable, so a route cannot be calculated.');
             return;
@@ -262,12 +275,8 @@ const Community = () => {
                     icon={FileText}
                     title="No reports nearby"
                     action={
-                        <button
-                            type="button"
-                            onClick={() => navigate('/report')}
-                            className="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700"
-                        >
-                            Submit a report
+                        <button type="button" onClick={() => navigate('/report')} className={primaryButton}>
+                            Report an incident
                         </button>
                     }
                 >
@@ -277,15 +286,15 @@ const Community = () => {
         }
         return (
             <>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
-                    <label htmlFor="report-type-filter" className="font-semibold text-gray-700">
+                <div className="mb-5 flex flex-wrap items-center gap-3">
+                    <label htmlFor="report-type-filter" className="text-sm font-bold text-slate-700">
                         Category
                     </label>
                     <select
                         id="report-type-filter"
                         value={typeFilter}
                         onChange={(e) => setTypeFilter(e.target.value)}
-                        className="px-4 py-2 bg-white border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none"
+                        className={selectClass}
                     >
                         <option value="all">All categories</option>
                         {typeOptions.map(([value, label]) => (
@@ -294,11 +303,11 @@ const Community = () => {
                             </option>
                         ))}
                     </select>
-                    <span className="text-sm text-gray-600" aria-live="polite">
-                        {visibleReports.length} result{visibleReports.length === 1 ? '' : 's'}
+                    <span className="text-sm font-medium text-slate-500" aria-live="polite">
+                        {visibleReports.length} report{visibleReports.length === 1 ? '' : 's'} within {RADIUS_LABEL}
                     </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                     {visibleReports.map((r) => (
                         <ReportCard key={r.id} report={r} onRoute={(item) => handleRoute(item, 'user_report')} />
                     ))}
@@ -318,7 +327,7 @@ const Community = () => {
             );
         }
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {alerts.items.map((a) => (
                     <OfficialAlertCard key={a.id} alert={a} />
                 ))}
@@ -331,7 +340,7 @@ const Community = () => {
             return <CitizenSosPanel ownAlerts={ownSos.items} loading={ownSos.loading} error={ownSos.error} onRetry={loadOwnSos} />;
         }
         return (
-            <div className="space-y-6">
+            <div className="space-y-5">
                 {volunteer && (
                     <VolunteerPanel
                         status={volunteerStatus}
@@ -352,7 +361,7 @@ const Community = () => {
                         There are no SOS alerts {volunteer ? `within ${RADIUS_LABEL} of you` : 'to show'} right now.
                     </EmptyState>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         {sos.items.map((a) => (
                             <SosAlertCard
                                 key={a.id}
@@ -379,51 +388,61 @@ const Community = () => {
     const panels = { reports: renderReports, alerts: renderAlerts, sos: renderSos, insights: renderInsights };
 
     return (
-        <>
-            <Navbar />
-            <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
-                <header className="bg-white border-b border-gray-200">
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10 text-center">
-                        <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 pb-2">
-                            Community Safety Hub
-                        </h1>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Citizen reports near you, official alerts from city departments
-                            {canSeeSos ? ' and emergencies you can help with.' : '.'}
-                        </p>
-                        {(volunteer || isSuperAdmin(user)) && (
-                            <p className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-sm font-medium text-blue-700">
-                                <UserCheck className="w-4 h-4" aria-hidden="true" />
-                                {volunteer ? 'Volunteer access - you can respond to nearby SOS alerts' : 'Super admin view'}
-                            </p>
-                        )}
-                        <div className="mt-6">
-                            <button
-                                type="button"
-                                onClick={handleRefresh}
-                                disabled={refreshing}
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm font-semibold disabled:opacity-60"
-                            >
-                                <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} aria-hidden="true" />
-                                {refreshing ? 'Refreshing…' : 'Refresh'}
-                            </button>
-                            <p className="mt-2 text-xs text-gray-500">Updates automatically every minute while this tab is open.</p>
-                        </div>
-                    </div>
-                </header>
+        <PageShell>
+            <PageHeader
+                title="Community"
+                subtitle={`Citizen reports near you and official alerts from city departments${canSeeSos ? ', plus emergencies you can help with' : ''}.`}
+                actions={(
+                    <button type="button" onClick={handleRefresh} disabled={refreshing} className={`${secondaryButton} disabled:opacity-60`}>
+                        <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} aria-hidden="true" />
+                        {refreshing ? 'Refreshing…' : 'Refresh'}
+                    </button>
+                )}
+            >
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                    {(volunteer || isSuperAdmin(user)) && (
+                        <StatusChip tone="blue">
+                            <UserCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                            {volunteer ? 'Volunteer: you can respond to nearby SOS alerts' : 'Super admin view'}
+                        </StatusChip>
+                    )}
+                    <span className="text-xs font-medium text-slate-500">Updates every minute while this page is open.</span>
+                </div>
+            </PageHeader>
 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-                    <section aria-label="Summary" className={`grid grid-cols-2 ${canSeeSos ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
-                        <StatTile label={`Reports within ${RADIUS_LABEL}`} value={statValue(reports, reports.items.length)} />
+            <div className="space-y-6">
+                <section aria-label="Summary" className={`grid gap-3 sm:gap-4 ${canSeeSos ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3'}`}>
+                    <StatTile
+                        icon={FileText}
+                        tone="bg-blue-50 text-blue-600 ring-blue-100"
+                        label={`Reports within ${RADIUS_LABEL}`}
+                        value={statValue(reports, reports.items.length)}
+                    />
+                    <StatTile
+                        icon={CheckCircle2}
+                        tone="bg-emerald-50 text-emerald-600 ring-emerald-100"
+                        label="Resolved nearby"
+                        value={statValue(reports, reports.items.filter((r) => r.status === 'resolved').length)}
+                    />
+                    <StatTile
+                        icon={Building2}
+                        tone="bg-violet-50 text-violet-600 ring-violet-100"
+                        label="Active official alerts"
+                        value={statValue(alerts, alerts.items.length)}
+                    />
+                    {canSeeSos && (
                         <StatTile
-                            label="Resolved nearby"
-                            value={statValue(reports, reports.items.filter((r) => r.status === 'resolved').length)}
+                            icon={AlertTriangle}
+                            tone="bg-red-50 text-red-600 ring-red-100"
+                            label="Active SOS"
+                            value={statValue(sos, activeSosCount)}
                         />
-                        <StatTile label="Official alerts" value={statValue(alerts, alerts.items.length)} />
-                        {canSeeSos && <StatTile label="Active SOS" value={statValue(sos, activeSosCount)} />}
-                    </section>
+                    )}
+                </section>
 
-                    <div role="tablist" aria-label="Community sections" className="flex flex-wrap justify-center gap-2">
+                {/* Segmented control (same as the reports page scope toggle); scrolls sideways on phones. */}
+                <div className="-mx-4 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
+                    <div role="tablist" aria-label="Community sections" className="inline-flex gap-1 rounded-2xl bg-slate-100 p-1 ring-1 ring-slate-200/60">
                         {TABS.map(({ key, label, icon: Icon }) => {
                             const selected = activeTab === key;
                             return (
@@ -435,14 +454,14 @@ const Community = () => {
                                     aria-selected={selected}
                                     aria-controls={`panel-${key}`}
                                     onClick={() => setActiveTab(key)}
-                                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm sm:text-base transition-colors ${
-                                        selected ? 'bg-blue-600 text-white shadow' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
+                                    className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl px-3.5 py-2 text-sm font-bold transition ${
+                                        selected ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'
                                     }`}
                                 >
-                                    <Icon className="w-4 h-4" aria-hidden="true" />
+                                    <Icon className={`h-4 w-4 ${selected ? 'text-blue-600' : ''}`} aria-hidden="true" />
                                     {label}
                                     {tabCounts[key] !== null && (
-                                        <span className={`px-2 py-0.5 text-xs rounded-full ${selected ? 'bg-white/20' : 'bg-gray-100'}`}>
+                                        <span className={`rounded-full px-2 py-0.5 text-xs tabular-nums ${selected ? 'bg-blue-50 text-blue-700' : 'bg-white/70 text-slate-600'}`}>
                                             {tabCounts[key]}
                                         </span>
                                     )}
@@ -450,13 +469,13 @@ const Community = () => {
                             );
                         })}
                     </div>
+                </div>
 
-                    <div role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
-                        {panels[activeTab]()}
-                    </div>
+                <div role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
+                    {panels[activeTab]()}
                 </div>
             </div>
-        </>
+        </PageShell>
     );
 };
 

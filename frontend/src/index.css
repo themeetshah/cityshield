@@ -11,6 +11,7 @@ body {
 
 /* Shared animations (SOS button, auth pages, landing page, navbar). */
 @keyframes emergencyPulse {
+
   0%,
   100% {
     transform: scale(1);
@@ -24,6 +25,7 @@ body {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
@@ -47,6 +49,7 @@ body {
 }
 
 @keyframes gradientShift {
+
   0%,
   100% {
     background-position: 0% 50%;

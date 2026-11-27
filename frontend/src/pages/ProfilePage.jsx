@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { Activity, Bell, Lock, User } from 'lucide-react';
 import Navbar from '../components/common/Navbar';
@@ -28,7 +29,13 @@ const ProfilePage = () => {
     const { user, refreshUser } = useAuth();
     const userId = user?.id;
 
-    const [activeTab, setActiveTab] = useState('profile');
+    const { hash } = useLocation();
+    const hashTab = TABS.some((t) => t.id === hash.slice(1)) ? hash.slice(1) : null;
+    const [activeTab, setActiveTab] = useState(hashTab || 'profile');
+    // Deep links such as the navbar bell (/profile#notifications) select a tab.
+    useEffect(() => {
+        if (hashTab) setActiveTab(hashTab);
+    }, [hashTab]);
     const [profile, setProfile] = useState(null);
     const [profileError, setProfileError] = useState(null);
     const [loading, setLoading] = useState(true);

@@ -4,6 +4,7 @@ import { Circle, MapContainer, Marker, Popup, TileLayer, useMap } from 'react-le
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapIcon } from 'lucide-react';
+import { OSM_ATTRIBUTION, OSM_TILE_URL } from '../../map/leafletSetup';
 import { humanize, timeAgo } from './format';
 import { Panel } from './ui';
 
@@ -70,10 +71,7 @@ const IncidentMap = ({ alerts, reports, teams, userLocation, radiusM, focus }) =
         >
             <div className="h-[60vh] min-h-[360px]">
                 <MapContainer center={center} zoom={zoom} className="h-full w-full" scrollWheelZoom>
-                    <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
+                    <TileLayer attribution={OSM_ATTRIBUTION} url={OSM_TILE_URL} maxZoom={19} />
                     <FlyTo target={focus} />
                     {userLocation && (
                         <>

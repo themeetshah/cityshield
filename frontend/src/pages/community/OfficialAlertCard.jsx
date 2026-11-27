@@ -1,53 +1,54 @@
-import { Building2, Clock, Share2 } from 'lucide-react';
+import { Clock, Megaphone, ShieldAlert, Share2, Siren, TrafficCone } from 'lucide-react';
+import { IconChip } from '../../components/dashboard/home/ui';
 import { formatDateTime, humanize, timeAgo } from './format';
 import shareItem from './shareItem';
+import { cardAction, cardShell } from './cardStyles';
+
+const TYPES = {
+    safety: { icon: ShieldAlert, tone: 'bg-amber-50 text-amber-600 ring-amber-100' },
+    traffic: { icon: TrafficCone, tone: 'bg-blue-50 text-blue-600 ring-blue-100' },
+    emergency: { icon: Siren, tone: 'bg-red-50 text-red-600 ring-red-100' },
+    community: { icon: Megaphone, tone: 'bg-violet-50 text-violet-600 ring-violet-100' },
+};
 
 const OfficialAlertCard = ({ alert }) => {
     const source = [alert.department_label, alert.station_name].filter(Boolean).join(' · ');
+    const type = TYPES[alert.alert_type] || TYPES.community;
 
     return (
-        <article className="flex flex-col bg-white rounded-2xl border border-purple-100 shadow-sm overflow-hidden">
-            <header className="p-5 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
-                <div className="flex items-center justify-between gap-2 mb-2 text-xs">
-                    <span className="inline-flex items-center gap-1 font-semibold uppercase tracking-wide text-white/90">
-                        <Building2 className="w-4 h-4" aria-hidden="true" />
-                        Official alert
-                    </span>
-                    {(alert.alert_type_display || alert.alert_type) && (
-                        <span className="px-2 py-0.5 rounded-full bg-white/20 font-semibold">
-                            {alert.alert_type_display || humanize(alert.alert_type)}
-                        </span>
-                    )}
-                </div>
-                <h3 className="font-bold text-lg leading-tight break-words">{alert.title}</h3>
-            </header>
-
-            <div className="flex flex-col flex-1 p-5">
-                {alert.message && (
-                    <p className="text-gray-700 text-sm leading-relaxed mb-4 whitespace-pre-line break-words">{alert.message}</p>
-                )}
-                <div className="mt-auto space-y-1 text-sm text-gray-600 mb-4">
-                    {source && <p className="font-medium text-gray-800">{source}</p>}
-                    {alert.issued_by_name && <p>Issued by {alert.issued_by_name}</p>}
-                    <p className="flex items-center gap-1.5">
-                        <Clock className="w-4 h-4" aria-hidden="true" />
-                        <time dateTime={alert.created_at} title={formatDateTime(alert.created_at)}>
-                            {timeAgo(alert.created_at)}
-                        </time>
+        <article className={cardShell}>
+            <div className="flex items-center gap-3">
+                <IconChip icon={type.icon} tone={type.tone} />
+                <div className="min-w-0">
+                    <p className="text-sm font-bold text-slate-700">
+                        {alert.alert_type_display || humanize(alert.alert_type) || 'Official alert'}
                     </p>
+                    {source && <p className="truncate text-xs font-semibold text-slate-500">{source}</p>}
                 </div>
+            </div>
+
+            <h3 className="mt-4 text-lg font-bold leading-snug text-slate-900 break-words">{alert.title}</h3>
+            {alert.message && (
+                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-600 break-words">{alert.message}</p>
+            )}
+
+            <div className="min-h-5 flex-1" aria-hidden="true" />
+            <div className="flex items-center justify-between gap-3 border-t border-slate-100 pt-4 text-sm text-slate-500">
+                <p className="flex min-w-0 items-center gap-1.5">
+                    <Clock className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    <time dateTime={alert.created_at} title={formatDateTime(alert.created_at)}>{timeAgo(alert.created_at)}</time>
+                    {alert.issued_by_name && <span className="truncate">· {alert.issued_by_name}</span>}
+                </p>
                 <button
                     type="button"
-                    onClick={() =>
-                        shareItem({
-                            title: alert.title,
-                            text: `${alert.title}${source ? ` (${source})` : ''}: ${alert.message || ''}`,
-                        })
-                    }
-                    className="flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-100 text-gray-800 rounded-xl text-sm font-semibold hover:bg-gray-200"
+                    onClick={() => shareItem({
+                        title: alert.title,
+                        text: `${alert.title}${source ? ` (${source})` : ''}: ${alert.message || ''}`,
+                    })}
+                    className={`${cardAction} !flex-none`}
+                    aria-label="Share alert"
                 >
-                    <Share2 className="w-4 h-4" aria-hidden="true" />
-                    Share
+                    <Share2 className="h-4 w-4" aria-hidden="true" /> Share
                 </button>
             </div>
         </article>

@@ -78,7 +78,6 @@ export const formatKm = (metres) => `${metres / 1000} km`;
 /** "—" for null/undefined so missing metrics are never shown as fake numbers. */
 export const orDash = (value, suffix = '') => (value === null || value === undefined ? '—' : `${value}${suffix}`);
 
-export const mapsUrl = (lat, lng) => `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 
 export const inputClass =
     'w-full px-3 py-2 border border-slate-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none';

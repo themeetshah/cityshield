@@ -99,7 +99,9 @@ def _verify_google_credential(credential):
     client_id = settings.GOOGLE_CLIENT_ID
     if not client_id:
         raise ValueError('Google sign-in is not configured on the server')
-    claims = id_token.verify_oauth2_token(credential, google_requests.Request(), client_id)
+    # Allow small clock drift between this server and Google ("Token used too early").
+    claims = id_token.verify_oauth2_token(
+        credential, google_requests.Request(), client_id, clock_skew_in_seconds=10)
     if claims.get('iss') not in ('accounts.google.com', 'https://accounts.google.com'):
         raise ValueError('Wrong token issuer')
     if not claims.get('email') or not claims.get('email_verified'):
@@ -121,7 +123,7 @@ def google_auth_view(request):
     try:
         claims = _verify_google_credential(credential)
     except ValueError as e:
-        logger.info('Rejected Google credential: %s', e)
+        logger.warning('Rejected Google credential: %s', e)
         return Response({'error': 'Google sign-in failed. Please try again.'}, status=400)
 
     email = claims['email'].lower()
@@ -579,7 +581,7 @@ def station_lookup(request):
     """Police-station search for assigning police staff. ?search=<name/city>, max 50 results."""
     from safety.models import PoliceStation
 
-    qs = PoliceStation.objects.all()
+    qs = PoliceStation.objects.filter(is_active=True)
     if not roles.is_superadmin(request.user) and request.user.police_station_id:
         qs = qs.filter(id=request.user.police_station_id)
     search = (request.GET.get('search') or '').strip()

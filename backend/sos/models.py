@@ -47,6 +47,10 @@ class PrivateMediaStorage(FileSystemStorage):
 
 
 def private_storage():
+    """Supabase private bucket when configured, otherwise the local private folder."""
+    if 'sos_private' in settings.STORAGES:
+        from django.core.files.storage import storages
+        return storages['sos_private']
     return PrivateMediaStorage()
 
 

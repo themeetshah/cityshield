@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { useAuth } from '../../context/AuthContext';
 import { errorMessage } from '../../services/api';
-import AuthLayout, { Field, FormError, GoogleButton } from './AuthLayout';
+import AuthLayout, { Field, FormError, GoogleButton, SubmitButton } from './AuthLayout';
 
 const RegisterPage = () => {
     const { register, googleAuth } = useAuth();
@@ -52,7 +52,7 @@ const RegisterPage = () => {
             footer={
                 <div>
                     Already have an account?{' '}
-                    <Link to="/login" className="text-blue-600 hover:text-blue-700 font-semibold">
+                    <Link to="/login" className="font-bold text-blue-600 hover:text-blue-700 hover:underline">
                         Sign in
                     </Link>
                 </div>
@@ -63,22 +63,18 @@ const RegisterPage = () => {
                 onCredential={handleGoogle}
                 onError={() => setError('Google sign-up failed.')}
             />
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-2.5">
                 <Field id="name" label="Full name" autoComplete="name" maxLength={100}
                     value={form.name} onChange={handleChange} placeholder="Your name" />
                 <Field id="email" label="Email address" type="email" autoComplete="email" required
                     value={form.email} onChange={handleChange} placeholder="you@example.com" />
-                <Field id="password" label="Password" type="password" autoComplete="new-password" required minLength={8}
-                    value={form.password} onChange={handleChange} placeholder="At least 8 characters" />
-                <Field id="confirm" label="Confirm password" type="password" autoComplete="new-password" required
-                    value={form.confirm} onChange={handleChange} placeholder="Repeat password" />
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-                >
-                    {loading ? 'Creating account…' : 'Create account'}
-                </button>
+                <div className="grid gap-3.5 sm:grid-cols-2">
+                    <Field id="password" label="Password" type="password" autoComplete="new-password" required minLength={8}
+                        value={form.password} onChange={handleChange} placeholder="Min. 8 characters" />
+                    <Field id="confirm" label="Confirm password" type="password" autoComplete="new-password" required
+                        value={form.confirm} onChange={handleChange} placeholder="Repeat password" />
+                </div>
+                <SubmitButton loading={loading} loadingText="Creating account…">Create account</SubmitButton>
                 <FormError message={error} />
             </form>
         </AuthLayout>

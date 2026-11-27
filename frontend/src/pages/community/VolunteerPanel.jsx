@@ -5,16 +5,16 @@ const VolunteerPanel = ({ status, error, updating, hasLocation, onToggle }) => {
     const available = !!status?.is_available;
 
     return (
-        <section aria-labelledby="volunteer-panel-title" className="bg-white rounded-2xl border border-emerald-200 shadow-sm p-5">
+        <section aria-labelledby="volunteer-panel-title" className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200 sm:p-6">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
-                    <HandHeart className="w-6 h-6 text-white" aria-hidden="true" />
-                </div>
+                <span className="inline-flex shrink-0 items-center justify-center rounded-xl bg-emerald-50 p-2.5 text-emerald-600 ring-1 ring-emerald-100">
+                    <HandHeart className="h-5 w-5" aria-hidden="true" />
+                </span>
                 <div className="flex-1 min-w-0">
-                    <h2 id="volunteer-panel-title" className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                    <h2 id="volunteer-panel-title" className="flex items-center gap-2 text-lg font-black tracking-tight text-slate-900">
                         Volunteer status
                         {status?.is_verified && (
-                            <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-700 ring-1 ring-emerald-100">
                                 <BadgeCheck className="w-3.5 h-3.5" aria-hidden="true" />
                                 Verified
                             </span>
@@ -23,7 +23,7 @@ const VolunteerPanel = ({ status, error, updating, hasLocation, onToggle }) => {
                     {error ? (
                         <p className="text-sm text-red-700">{error}</p>
                     ) : status ? (
-                        <p className="text-sm text-gray-600">
+                        <p className="mt-0.5 text-sm text-slate-600">
                             {available
                                 ? 'You are available and can be alerted to nearby emergencies.'
                                 : 'You are currently unavailable and will not be alerted to emergencies.'}{' '}
@@ -31,7 +31,7 @@ const VolunteerPanel = ({ status, error, updating, hasLocation, onToggle }) => {
                             {status.response_count === 1 ? '' : 's'}.
                         </p>
                     ) : (
-                        <p className="text-sm text-gray-500">Loading your volunteer status…</p>
+                        <p className="mt-0.5 text-sm text-slate-500">Loading your volunteer status…</p>
                     )}
                     {available && !hasLocation && (
                         <p className="text-sm text-amber-700 mt-1">
@@ -41,7 +41,7 @@ const VolunteerPanel = ({ status, error, updating, hasLocation, onToggle }) => {
                 </div>
                 {status && (
                     <div className="inline-flex items-center gap-3">
-                        <span className="text-sm font-semibold text-gray-700" aria-hidden="true">{available ? 'Available' : 'Unavailable'}</span>
+                        <span className="text-sm font-bold text-slate-700" aria-hidden="true">{available ? 'Available' : 'Unavailable'}</span>
                         <button
                             type="button"
                             role="switch"
@@ -50,7 +50,7 @@ const VolunteerPanel = ({ status, error, updating, hasLocation, onToggle }) => {
                             disabled={updating}
                             onClick={() => onToggle(!available)}
                             className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors disabled:opacity-60 ${
-                                available ? 'bg-emerald-600' : 'bg-gray-300'
+                                available ? 'bg-emerald-600' : 'bg-slate-300'
                             }`}
                         >
                             <span

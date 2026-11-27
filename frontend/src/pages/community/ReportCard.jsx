@@ -1,79 +1,64 @@
 import { Link } from 'react-router-dom';
-import { Clock, FileText, MapPin, Route, Share2, User } from 'lucide-react';
-import { formatDistance, humanize, reportStatusClass, timeAgo, truncate } from './format';
+import { Clock, MapPin, Route, Share2, User } from 'lucide-react';
+import { StatusPill, TypeChip } from '../reports/ReportCards';
+import { formatDistance, humanize, timeAgo, truncate } from './format';
 import shareItem from './shareItem';
+import { cardShell, cardAction, cardPrimaryAction } from './cardStyles';
 
 const ReportCard = ({ report, onRoute }) => {
     const url = `${window.location.origin}/reports/${report.id}`;
-    const statusLabel = report.status_display || humanize(report.status);
     const typeLabel = report.report_type_display || humanize(report.report_type);
 
     return (
-        <article className="flex flex-col bg-white rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-            <header className="p-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-                <div className="flex items-center justify-between gap-2 mb-2 text-xs">
-                    <span className="inline-flex items-center gap-1 font-semibold uppercase tracking-wide text-white/90">
-                        <FileText className="w-4 h-4" aria-hidden="true" />
-                        {typeLabel}
-                    </span>
-                    <span className={`px-2 py-0.5 rounded-full font-semibold ${reportStatusClass(report.status)}`}>
-                        {statusLabel}
-                    </span>
+        <article className={cardShell}>
+            <div className="flex items-start justify-between gap-3">
+                <div className="flex min-w-0 items-center gap-3">
+                    <TypeChip type={report.report_type} size="md" />
+                    <div className="min-w-0">
+                        <p className="text-sm font-bold text-slate-700">{typeLabel}</p>
+                        {report.is_mine && <p className="text-xs font-bold text-blue-600">Your report</p>}
+                    </div>
                 </div>
-                <h3 className="font-bold text-lg leading-tight break-words">{report.title}</h3>
-            </header>
+                <StatusPill report={report} />
+            </div>
 
-            <div className="flex flex-col flex-1 p-5">
-                {report.description && (
-                    <p className="text-gray-700 text-sm leading-relaxed mb-4 break-words">{truncate(report.description, 160)}</p>
-                )}
+            <h3 className="mt-4 text-lg font-bold leading-snug text-slate-900 break-words">{report.title}</h3>
+            {report.description && (
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 break-words">{truncate(report.description, 160)}</p>
+            )}
 
-                <dl className="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-5 mt-auto">
-                    <div className="flex items-center gap-1.5">
-                        <MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                        <dt className="sr-only">Distance</dt>
-                        <dd>{formatDistance(report.distance) || 'Distance unknown'}</dd>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                        <Clock className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                        <dt className="sr-only">Reported</dt>
-                        <dd>
-                            <time dateTime={report.created_at}>{timeAgo(report.created_at)}</time>
-                        </dd>
-                    </div>
-                    <div className="flex items-center gap-1.5 col-span-2 min-w-0">
-                        <User className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                        <dt className="sr-only">Reported by</dt>
-                        <dd className="truncate">
-                            {report.is_mine ? 'You' : report.reported_by_name || 'Anonymous'}
-                        </dd>
-                    </div>
-                </dl>
-
-                <div className="grid grid-cols-3 gap-2">
-                    <Link
-                        to={`/reports/${report.id}`}
-                        className="flex items-center justify-center px-3 py-2 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700"
-                    >
-                        Details
-                    </Link>
-                    <button
-                        type="button"
-                        onClick={() => onRoute(report)}
-                        className="flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-100 text-gray-800 rounded-xl text-sm font-semibold hover:bg-gray-200"
-                    >
-                        <Route className="w-4 h-4" aria-hidden="true" />
-                        Route
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => shareItem({ title: report.title, text: truncate(report.description, 100), url })}
-                        className="flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-100 text-gray-800 rounded-xl text-sm font-semibold hover:bg-gray-200"
-                    >
-                        <Share2 className="w-4 h-4" aria-hidden="true" />
-                        Share
-                    </button>
+            <dl className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-slate-500">
+                <div className="flex items-center gap-1.5">
+                    <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    <dt className="sr-only">Distance</dt>
+                    <dd>{formatDistance(report.distance) ? `${formatDistance(report.distance)} away` : 'Distance unknown'}</dd>
                 </div>
+                <div className="flex items-center gap-1.5">
+                    <Clock className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    <dt className="sr-only">Reported</dt>
+                    <dd><time dateTime={report.created_at}>{timeAgo(report.created_at)}</time></dd>
+                </div>
+                <div className="flex min-w-0 items-center gap-1.5">
+                    <User className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    <dt className="sr-only">Reported by</dt>
+                    <dd className="truncate">{report.is_mine ? 'You' : report.reported_by_name || 'Anonymous'}</dd>
+                </div>
+            </dl>
+
+            <div className="min-h-5 flex-1" aria-hidden="true" />
+            <div className="flex gap-2 border-t border-slate-100 pt-4">
+                <Link to={`/reports/${report.id}`} className={cardPrimaryAction}>Details</Link>
+                <button type="button" onClick={() => onRoute(report)} className={cardAction}>
+                    <Route className="h-4 w-4" aria-hidden="true" /> Route
+                </button>
+                <button
+                    type="button"
+                    onClick={() => shareItem({ title: report.title, text: truncate(report.description, 100), url })}
+                    className={cardAction}
+                    aria-label="Share report"
+                >
+                    <Share2 className="h-4 w-4" aria-hidden="true" /> Share
+                </button>
             </div>
         </article>
     );

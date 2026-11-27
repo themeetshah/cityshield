@@ -4,6 +4,8 @@ import { BarChart3 } from 'lucide-react';
 import { humanize } from './format';
 import { EmptyState } from './StateViews';
 
+const AXIS_TICK = { fill: '#64748b', fontSize: 12 };
+
 const STATUS_COLORS = {
     pending: '#d97706',
     investigating: '#2563eb',
@@ -32,7 +34,7 @@ const buildInsights = (reports) => {
         const next = new Date(day);
         next.setDate(day.getDate() + 1);
         return {
-            day: day.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric' }),
+            day: day.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric' }),
             Reports: reports.filter((r) => {
                 const t = new Date(r.created_at);
                 return t >= day && t < next;
@@ -52,10 +54,10 @@ const buildInsights = (reports) => {
 };
 
 const ChartCard = ({ title, description, children }) => (
-    <figure className="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
+    <figure className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200 sm:p-6">
         <figcaption className="mb-4">
-            <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-            {description && <p className="text-sm text-gray-500">{description}</p>}
+            <h3 className="text-lg font-black tracking-tight text-slate-900">{title}</h3>
+            {description && <p className="text-sm text-slate-500">{description}</p>}
         </figcaption>
         <div className="h-72">{children}</div>
     </figure>
@@ -74,17 +76,17 @@ const InsightsPanel = ({ reports, radiusLabel }) => {
 
     return (
         <div className="space-y-4">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-slate-600">
                 Based on {reports.length} citizen report{reports.length === 1 ? '' : 's'} within {radiusLabel} of your
                 location.
             </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
                 <ChartCard title="Reports by category">
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={insights.byType} layout="vertical" margin={{ left: 24 }}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis type="number" allowDecimals={false} />
-                            <YAxis type="category" dataKey="name" width={110} />
+                            <CartesianGrid stroke="#e2e8f0" horizontal={false} />
+                            <XAxis type="number" allowDecimals={false} tick={AXIS_TICK} axisLine={false} tickLine={false} />
+                            <YAxis type="category" dataKey="name" width={110} tick={AXIS_TICK} axisLine={false} tickLine={false} />
                             <Tooltip />
                             <Bar dataKey="value" name="Reports" fill="#3b82f6" radius={[0, 6, 6, 0]} />
                         </BarChart>
@@ -94,9 +96,9 @@ const InsightsPanel = ({ reports, radiusLabel }) => {
                 <ChartCard title="Reports in the last 7 days">
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={insights.timeline}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="day" />
-                            <YAxis allowDecimals={false} />
+                            <CartesianGrid stroke="#e2e8f0" vertical={false} />
+                            <XAxis dataKey="day" tick={AXIS_TICK} axisLine={false} tickLine={false} />
+                            <YAxis allowDecimals={false} tick={AXIS_TICK} axisLine={false} tickLine={false} />
                             <Tooltip />
                             <Bar dataKey="Reports" fill="#6366f1" radius={[6, 6, 0, 0]} />
                         </BarChart>

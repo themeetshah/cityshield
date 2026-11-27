@@ -5,13 +5,14 @@ from unittest import mock
 import requests
 from django.core.cache import cache
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import override_settings
+from django.test import SimpleTestCase, override_settings
 from rest_framework import status
 from rest_framework.test import APITestCase
 
 from users.models import User
 
 from .models import Report
+from .privacy import coarse_address
 
 PNG_BYTES = b'\x89PNG\r\n\x1a\n' + b'\x00' * 64
 MP4_BYTES = b'\x00\x00\x00\x18ftypmp42' + b'\x00' * 64
@@ -324,3 +325,28 @@ class ReverseGeocodeTests(ReportTestBase):
     def test_invalid_coordinates(self):
         self.client.force_authenticate(self.citizen)
         self.assertEqual(self.client.get('/api/reports/reverse-geocode/?lat=abc&lon=1').status_code, 400)
+
+
+class CoarseAddressTests(SimpleTestCase):
+    """Public viewers see the area (locality + city), never the house/street part."""
+
+    def test_keeps_area_and_drops_street_state_pin_country(self):
+        cases = {
+            '12 MG Road, Navrangpura, Ahmedabad, Gujarat, 380009, India': 'Navrangpura, Ahmedabad',
+            'Platform 2-2A-3, Station Road, Revdi Bazar, Maninagar Taluka, Ahmedabad, Gujarat, 380021, India':
+                'Revdi Bazar, Maninagar Taluka, Ahmedabad',
+            'Sabarmati, SabarmatiTaluka, Ahmedabad, Gujarat, 380005, India': 'Sabarmati Taluka, Ahmedabad',
+        }
+        for full, expected in cases.items():
+            self.assertEqual(coarse_address(full), expected)
+
+    def test_first_part_is_never_shown(self):
+        for full in ('201, Service road, Prahladnagar, Sarkhej, Ahmedabad, Gujarat, 380015, India',
+                     'Near the old bus stand, Ahmedabad'):
+            self.assertNotIn(full.split(',')[0], coarse_address(full))
+
+    def test_short_or_empty_values(self):
+        self.assertEqual(coarse_address('Ahmedabad'), 'Ahmedabad')
+        self.assertEqual(coarse_address('Near the old bus stand, Ahmedabad'), 'Ahmedabad')
+        self.assertIn(coarse_address(''), ('', None))
+        self.assertIsNone(coarse_address(None))

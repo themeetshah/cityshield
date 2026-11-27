@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { AlertTriangle, ChevronLeft, ChevronRight, Clock, ExternalLink, MapPin, RefreshCw, User, X } from 'lucide-react';
-import sosService from '../../services/sos';
+import { Link } from 'react-router-dom';
+import { AlertTriangle, ChevronLeft, ChevronRight, Clock, MapPin, Navigation, RefreshCw, User, X } from 'lucide-react';
+import sosService, { sosTrackingPath } from '../../services/sos';
 import { errorMessage } from '../../services/api';
 
 const POLL_MS = 10000;
@@ -292,15 +293,15 @@ const VideoStreamModal = ({ sosId, onClose }) => {
                                         <MapPin className="h-4 w-4 text-gray-400" aria-hidden="true" />
                                         <dt className="sr-only">Last known location</dt>
                                         <dd>
-                                            <a
-                                                href={`https://www.google.com/maps?q=${info.latitude},${info.longitude}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                            <Link
+                                                to={sosTrackingPath(sosId, info.latitude, info.longitude)}
+                                                onClick={onClose}
+                                                title="Track this SOS live on the Safety Map"
                                                 className="inline-flex items-center gap-1 text-blue-300 underline hover:text-blue-200"
                                             >
                                                 {info.latitude.toFixed(5)}, {info.longitude.toFixed(5)}
-                                                <ExternalLink className="h-3 w-3" aria-hidden="true" />
-                                            </a>
+                                                <Navigation className="h-3 w-3" aria-hidden="true" />
+                                            </Link>
                                         </dd>
                                     </div>
                                 )}

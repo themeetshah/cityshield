@@ -51,12 +51,13 @@ const apply = (state, key, data) => {
  * outdated centre are aborted, so results can never arrive out of order and
  * nothing refetches unless the centre (or reload token) actually changes.
  */
-const useSafetyMapData = (center) => {
+const useSafetyMapData = (center, { only = null } = {}) => {
     const [data, setData] = useState(EMPTY);
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState([]);
     const [reloadToken, setReloadToken] = useState(0);
 
+    const onlyKey = only ? only.join(',') : '';
     const latitude = center?.latitude;
     const longitude = center?.longitude;
 
@@ -66,24 +67,26 @@ const useSafetyMapData = (center) => {
         const config = { signal: controller.signal };
         setLoading(true);
 
-        Promise.allSettled(SOURCES.map((source) => source.load(latitude, longitude, config))).then((results) => {
+        const keys = onlyKey ? onlyKey.split(',') : null;
+        const sources = keys ? SOURCES.filter((source) => keys.includes(source.key)) : SOURCES;
+        Promise.allSettled(sources.map((source) => source.load(latitude, longitude, config))).then((results) => {
             if (controller.signal.aborted) return;
             setData((prev) => results.reduce(
                 (state, result, index) => (
-                    result.status === 'fulfilled' ? apply(state, SOURCES[index].key, result.value) : state
+                    result.status === 'fulfilled' ? apply(state, sources[index].key, result.value) : state
                 ),
                 prev,
             ));
             setErrors(results.flatMap((result, index) => (
                 result.status === 'rejected'
-                    ? [`Could not load ${SOURCES[index].label}: ${errorMessage(result.reason)}`]
+                    ? [`Could not load ${sources[index].label}: ${errorMessage(result.reason)}`]
                     : []
             )));
             setLoading(false);
         });
 
         return () => controller.abort();
-    }, [latitude, longitude, reloadToken]);
+    }, [latitude, longitude, reloadToken, onlyKey]);
 
     const reload = useCallback(() => setReloadToken((n) => n + 1), []);
     const dismissErrors = useCallback(() => setErrors([]), []);

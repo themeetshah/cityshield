@@ -1,14 +1,18 @@
-"""Nearby hospitals / police stations from the database plus (cached) OpenStreetMap."""
+"""Nearby hospitals / police stations - read from the database only.
+
+The database is kept current from OpenStreetMap by `safety.sync` (background
+tile refresh + `manage.py sync_facilities`), so map requests never call
+OpenStreetMap directly and can't fail because of it.
+"""
 from cityshield_backend.geo import bbox_filter, bounding_box, haversine_m
 
-from . import overpass
-from .models import Hospital, PoliceStation
+from . import sync
+from .models import FacilitySyncArea, Hospital, PoliceStation
 
-DUPLICATE_DISTANCE_M = 50
 MAX_FACILITIES_PER_TYPE = 100
 
 
-def _db_facility(obj, facility_type):
+def _as_dict(obj, facility_type, distance):
     return {
         'id': obj.id,
         'name': obj.name,
@@ -18,60 +22,37 @@ def _db_facility(obj, facility_type):
         'contact_number': obj.contact_number,
         'hospital_type': getattr(obj, 'hospital_type', ''),
         'type': facility_type,
-        'source': obj.source or 'database',
+        'source': obj.source,
+        'distance': round(distance),
     }
 
 
-def _within(items, lat, lng, radius):
-    result = []
-    for item in items:
-        distance = haversine_m(lat, lng, item['latitude'], item['longitude'])
+def _nearby(model, facility_type, lat, lng, radius, limit):
+    rows = model.objects.filter(is_active=True, **bbox_filter(bounding_box(lat, lng, radius)))
+    items = []
+    for row in rows:
+        distance = haversine_m(lat, lng, row.latitude, row.longitude)
         if distance <= radius:
-            result.append({**item, 'distance': round(distance)})
-    return result
+            items.append(_as_dict(row, facility_type, distance))
+    items.sort(key=lambda f: f['distance'])
+    return items[:limit]
 
 
-def _merge(primary, secondary):
-    """Database entries win; drop OSM entries within 50 m of one already listed."""
-    merged = list(primary)
-    for item in secondary:
-        if not any(
-            haversine_m(item['latitude'], item['longitude'], other['latitude'], other['longitude'])
-            < DUPLICATE_DISTANCE_M
-            for other in merged
-        ):
-            merged.append(item)
-    merged.sort(key=lambda f: f['distance'])
-    return merged[:MAX_FACILITIES_PER_TYPE]
-
-
-def db_facilities(lat, lng, radius):
-    bbox = bbox_filter(bounding_box(lat, lng, radius))
-    hospitals = [_db_facility(h, 'hospital') for h in Hospital.objects.filter(**bbox)]
-    police = [_db_facility(p, 'police') for p in PoliceStation.objects.filter(**bbox)]
-    return _within(hospitals, lat, lng, radius), _within(police, lat, lng, radius)
-
-
-def nearby_facilities(lat, lng, radius, include_osm=True):
-    """{'hospitals', 'police_stations', 'sources', 'warnings'} within `radius` metres."""
-    hospitals, police = db_facilities(lat, lng, radius)
-    sources = ['database']
+def nearby_facilities(lat, lng, radius, limit=MAX_FACILITIES_PER_TYPE):
+    """{'hospitals', 'police_stations', 'sources', 'warnings', 'syncing', 'last_synced_at'}."""
+    syncing = sync.ensure_fresh(lat, lng)
+    key, _ = sync._tile(lat, lng)
+    area = FacilitySyncArea.objects.filter(key=key).only('last_success_at').first()
+    hospitals = _nearby(Hospital, 'hospital', lat, lng, radius, limit)
+    police = _nearby(PoliceStation, 'police', lat, lng, radius, limit)
     warnings = []
-    if include_osm:
-        if radius > overpass.MAX_OVERPASS_RADIUS_M:
-            warnings.append(
-                f'OpenStreetMap data is limited to {overpass.MAX_OVERPASS_RADIUS_M // 1000} km around you.'
-            )
-        osm, warning = overpass.fetch_facilities(lat, lng, radius)
-        if warning:
-            warnings.append(warning)
-        else:
-            sources.append('openstreetmap')
-            hospitals = _merge(sorted(hospitals, key=lambda f: f['distance']),
-                               _within(osm['hospitals'], lat, lng, radius))
-            police = _merge(sorted(police, key=lambda f: f['distance']),
-                            _within(osm['police_stations'], lat, lng, radius))
-    if 'openstreetmap' not in sources:
-        hospitals = sorted(hospitals, key=lambda f: f['distance'])[:MAX_FACILITIES_PER_TYPE]
-        police = sorted(police, key=lambda f: f['distance'])[:MAX_FACILITIES_PER_TYPE]
-    return {'hospitals': hospitals, 'police_stations': police, 'sources': sources, 'warnings': warnings}
+    if syncing and not hospitals and not police:
+        warnings.append('Loading hospitals and police stations for this area - they will appear shortly.')
+    return {
+        'hospitals': hospitals,
+        'police_stations': police,
+        'sources': ['openstreetmap'],
+        'warnings': warnings,
+        'syncing': syncing,
+        'last_synced_at': area.last_success_at if area else None,
+    }

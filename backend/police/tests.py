@@ -281,6 +281,21 @@ class DispatchTests(OperationsTestBase):
         self.assertEqual(self.client.patch(url, {'status': 'resolved'}, format='json').status_code, 403)
 
 
+    def test_owner_notified_on_dispatch_and_dispatch_closed_on_resolve(self):
+        sos = SOSAlert.objects.create(latitude=19.0, longitude=72.8, user=self.citizen)
+        self.as_user(self.police_admin_a)
+        with self.captureOnCommitCallbacks(execute=True):
+            self.assertEqual(self.assign(sos, self.team_a).status_code, 200)
+        self.assertTrue(Notification.objects.filter(
+            user=self.citizen, title='Police team assigned to your SOS').exists())
+
+        self.as_user(self.citizen)  # the owner ends the SOS
+        self.assertEqual(self.client.post(f'/api/sos/resolve/{sos.id}/').status_code, 200)
+        response = SOSResponse.objects.get(sos_alert=sos)
+        self.assertEqual(response.status, 'resolved')
+        self.assertIsNotNone(response.resolved_at)
+
+
 class OfficialAlertTests(OperationsTestBase):
     def test_citizen_can_list_active_but_not_publish(self):
         OfficialAlert.objects.create(title='Old', message='m', is_active=False)

@@ -18,6 +18,8 @@ def env_list(name, default=''):
     return [item.strip() for item in os.getenv(name, default).split(',') if item.strip()]
 
 
+RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == 'test'
+
 DEBUG = env_bool('DJANGO_DEBUG', False)
 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -43,7 +45,7 @@ MAX_SOS_CHUNK_BYTES = 50 * 1024 * 1024
 
 GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID', '')
 
-FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5174')
+FRONTEND_URL = os.getenv('FRONTEND_URL')
 CORS_ALLOWED_ORIGINS = env_list('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://localhost:5174')
 CORS_ALLOW_CREDENTIALS = False  # JWT in Authorization header; no cookies needed
 CORS_ALLOW_HEADERS = [
@@ -127,12 +129,41 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cityshield_backend.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / os.getenv('SQLITE_NAME', 'db.sqlite3'),
+# PostgreSQL (e.g. Supabase) when DATABASE_URL is set, SQLite otherwise.
+# The test suite never uses DATABASE_URL; set TEST_DATABASE_URL to run it on Postgres.
+DATABASE_URL = os.getenv('TEST_DATABASE_URL' if RUNNING_TESTS else 'DATABASE_URL', '').strip()
+if DATABASE_URL:
+    import dj_database_url
+
+    DATABASES = {
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            # 0 = close after each request. Keep it 0 with `runserver`: it starts a thread per
+            # request and each thread would hold its own connection, exhausting Supabase's
+            # pooler (15 clients in session mode). Under gunicorn (fixed workers) set e.g. 60.
+            conn_max_age=int(os.getenv('DB_CONN_MAX_AGE', 0)),
+            conn_health_checks=True,
+            ssl_require=env_bool('DATABASE_SSL_REQUIRE', 'supabase' in DATABASE_URL),
+        )
     }
-}
+    # Supabase's transaction pooler (port 6543) cannot keep server-side cursors open.
+    if ':6543' in DATABASE_URL:
+        DATABASES['default']['DISABLE_SERVER_SIDE_CURSORS'] = True
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / os.getenv('SQLITE_NAME', 'db.sqlite3'),
+            # SOS traffic writes concurrently (video segments, live location, resolve).
+            # IMMEDIATE transactions + a busy timeout make writers queue instead of
+            # failing with "database is locked"; WAL lets reads continue during writes.
+            'OPTIONS': {
+                'timeout': 20,
+                'transaction_mode': 'IMMEDIATE',
+                'init_command': 'PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL;',
+            },
+        }
+    }
 
 CACHES = {
     'default': {
@@ -148,7 +179,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-if len(sys.argv) > 1 and sys.argv[1] == 'test':
+if RUNNING_TESTS:
     # Fast hashing in the test suite only.
     PASSWORD_HASHERS = ['django.contrib.auth.hashers.MD5PasswordHasher']
 
@@ -160,11 +191,44 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# File storage: local folders by default, Supabase Storage (S3 protocol) when configured.
+#   default     -> public bucket for report evidence (plain public URLs)
+#   sos_private -> private bucket for SOS videos (no public URL; streamed by the signed endpoint)
+# The test suite always uses local folders.
+SUPABASE_URL = os.getenv('SUPABASE_URL', '').strip().rstrip('/')
+SUPABASE_S3_ACCESS_KEY_ID = os.getenv('SUPABASE_S3_ACCESS_KEY_ID', '').strip()
+SUPABASE_S3_SECRET_ACCESS_KEY = os.getenv('SUPABASE_S3_SECRET_ACCESS_KEY', '').strip()
+USE_SUPABASE_STORAGE = bool(SUPABASE_URL and SUPABASE_S3_ACCESS_KEY_ID and SUPABASE_S3_SECRET_ACCESS_KEY) and not RUNNING_TESTS
+
+STORAGES = {
+    'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
+    'staticfiles': {'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage'},
+}
+if USE_SUPABASE_STORAGE:
+    from cityshield_backend.storage import supabase_storage_settings
+
+    STORAGES.update(supabase_storage_settings(
+        supabase_url=SUPABASE_URL,
+        access_key=SUPABASE_S3_ACCESS_KEY_ID,
+        secret_key=SUPABASE_S3_SECRET_ACCESS_KEY,
+        # `or` (not a getenv default) so an empty "NAME=" line in .env still falls back.
+        region=os.getenv('SUPABASE_S3_REGION') or 'ap-south-1',
+        public_bucket=os.getenv('SUPABASE_PUBLIC_BUCKET') or 'report-media',
+        private_bucket=os.getenv('SUPABASE_PRIVATE_BUCKET') or 'sos-videos',
+    ))
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # External services (OpenStreetMap). Identify the app per their usage policies.
 OSM_USER_AGENT = os.getenv('OSM_USER_AGENT', 'CityShield/2.0 (student project)')
 EXTERNAL_HTTP_TIMEOUT = 10
+OVERPASS_SYNC_TIMEOUT = int(os.getenv('OVERPASS_SYNC_TIMEOUT', 90))  # admin-triggered sync only
+# Police stations / hospitals come from OpenStreetMap. Map requests only read the DB;
+# missing or stale (> FACILITY_REFRESH_DAYS) ~25 km tiles are refreshed in a background thread.
+FACILITY_AUTO_SYNC = env_bool('FACILITY_AUTO_SYNC', True) and not RUNNING_TESTS
+FACILITY_REFRESH_DAYS = int(os.getenv('FACILITY_REFRESH_DAYS', 7))
+# Areas refreshed by `manage.py sync_facilities` with no arguments (comma separated place names).
+FACILITY_SYNC_PLACES = env_list('FACILITY_SYNC_PLACES', 'Ahmedabad')
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

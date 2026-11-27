@@ -14,14 +14,14 @@ export const timeAgo = (value) => {
     if (hours < 24) return `${hours} h ago`;
     const days = Math.floor(hours / 24);
     if (days < 7) return `${days} day${days === 1 ? '' : 's'} ago`;
-    return date.toLocaleDateString();
+    return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
 export const formatDateTime = (value) => {
     if (!value) return '';
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return '';
-    return date.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+    return date.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
 };
 
 /** "medical_emergency" -> "Medical emergency" */

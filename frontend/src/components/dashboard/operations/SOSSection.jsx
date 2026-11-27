@@ -1,10 +1,12 @@
 import { useId, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AlertTriangle, CheckCircle, MapPin, Navigation, Shield, Truck, User, Video } from 'lucide-react';
 import { departmentLabel } from '../../../auth/roles';
 import {
-    DISPATCH_STEPS, NEXT_STEP_LABEL, formatDistance, formatKm, humanize, inputClass, mapsUrl, staggerDelay, timeAgo,
+    DISPATCH_STEPS, NEXT_STEP_LABEL, formatDistance, formatKm, humanize, inputClass, staggerDelay, timeAgo,
 } from './format';
+import { sosTrackingPath } from '../../../services/sos';
 import { EmptyState, ErrorBanner, LoadMore, LoadingBlock, Panel } from './ui';
 
 const MotionArticle = motion.article;
@@ -176,15 +178,14 @@ const SOSCard = ({ alert, index, isPolice, teams, onAssign, onAdvance, onResolve
                     <MapPin className="w-4 h-4" aria-hidden="true" />
                     Map
                 </button>
-                <a
-                    href={mapsUrl(alert.latitude, alert.longitude)}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <Link
+                    to={sosTrackingPath(alert.id, alert.latitude, alert.longitude)}
+                    title={alert.is_active ? 'Route to the live SOS position in the Safety Map' : 'Show on the Safety Map'}
                     className="flex items-center justify-center gap-1 rounded-lg bg-green-600 hover:bg-green-700 text-white py-2 text-xs font-semibold"
                 >
                     <Navigation className="w-4 h-4" aria-hidden="true" />
-                    Navigate
-                </a>
+                    {alert.is_active ? 'Track live' : 'Navigate'}
+                </Link>
                 {alert.is_active && (
                     <button
                         type="button"

@@ -56,7 +56,11 @@ const useUnreadCount = (enabled) => {
     return count;
 };
 
-const Navbar = () => {
+/**
+ * `width` is the page's content width (a Tailwind max-w class), so the logo and the
+ * account menu line up with the left/right edges of the content below.
+ */
+const Navbar = ({ width = 'max-w-7xl' }) => {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -98,17 +102,23 @@ const Navbar = () => {
     const isActive = (path) =>
         path === '/' ? location.pathname === '/' : location.pathname === path || location.pathname.startsWith(`${path}/`);
     const linkClass = (active) =>
-        `flex items-center gap-2 px-3 py-2 rounded-xl font-semibold transition-colors ${
+        `flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-colors lg:text-[15px] ${
+            active ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow' : 'text-gray-700 hover:bg-blue-50'
+        }`;
+    const mobileLinkClass = (active) =>
+        `flex items-center gap-3 rounded-xl px-3 py-2.5 font-semibold transition-colors ${
             active ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow' : 'text-gray-700 hover:bg-blue-50'
         }`;
 
     return (
         <nav className="bg-white/95 backdrop-blur-xl border-b border-gray-200/80 sticky top-0 z-50 shadow-sm" aria-label="Main">
-            <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-14 sm:h-16">
-                    <Link to="/" onClick={closeMenus} className="flex items-center gap-2 sm:gap-3 select-none">
-                        <span className="bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 p-2 sm:p-2.5 rounded-xl shadow">
-                            <Shield className="text-white w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />
+            {/* Same horizontal padding as the page content. */}
+            <div className={`mx-auto w-full px-4 sm:px-6 lg:px-8 ${width}`}>
+                {/* Three columns on desktop so the links are centred regardless of the logo / account widths. */}
+                <div className="flex h-14 items-center justify-between gap-4 sm:h-16 md:grid md:grid-cols-[1fr_auto_1fr]">
+                    <Link to="/" onClick={closeMenus} className="flex items-center gap-2.5 select-none justify-self-start">
+                        <span className="bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 p-2 rounded-xl shadow">
+                            <Shield className="text-white w-5 h-5" aria-hidden="true" />
                         </span>
                         <span className="text-lg sm:text-xl font-black bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
                             CityShield
@@ -118,13 +128,14 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-1">
                         {links.map(({ to, label, icon: Icon }) => (
                             <Link key={to} to={to} className={linkClass(isActive(to))} aria-current={isActive(to) ? 'page' : undefined}>
-                                <Icon className="w-4 h-4" aria-hidden="true" />
-                                <span>{label}</span>
+                                {/* Icons only from lg: at tablet widths five icon+label links don't fit. */}
+                                <Icon className="hidden w-4 h-4 lg:block" aria-hidden="true" />
+                                <span className="whitespace-nowrap">{label}</span>
                             </Link>
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 sm:gap-1.5 justify-self-end">
                         {user ? (
                             <>
                                 <Link
@@ -144,7 +155,7 @@ const Navbar = () => {
                                     <button
                                         type="button"
                                         onClick={() => setProfileOpen((o) => !o)}
-                                        className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-blue-50"
+                                        className="flex items-center gap-2.5 rounded-xl p-1 hover:bg-blue-50 lg:py-1 lg:pl-1 lg:pr-2"
                                         aria-haspopup="menu"
                                         aria-expanded={profileOpen}
                                         aria-label="Account menu"
@@ -212,15 +223,15 @@ const Navbar = () => {
                 </div>
 
                 {menuOpen && (
-                    <div id="mobile-nav" className="md:hidden pb-3 space-y-1">
+                    <div id="mobile-nav" className="md:hidden -mx-1 space-y-1 border-t border-gray-100 pb-3 pt-2">
                         {links.map(({ to, label, icon: Icon }) => (
-                            <Link key={to} to={to} onClick={closeMenus} className={linkClass(isActive(to))}>
+                            <Link key={to} to={to} onClick={closeMenus} className={mobileLinkClass(isActive(to))} aria-current={isActive(to) ? 'page' : undefined}>
                                 <Icon className="w-4 h-4" aria-hidden="true" />
                                 <span>{label}</span>
                             </Link>
                         ))}
                         {isCommunityUser(user) && (
-                            <Link to="/report" onClick={closeMenus} className={linkClass(isActive('/report'))}>
+                            <Link to="/report" onClick={closeMenus} className={mobileLinkClass(isActive('/report'))}>
                                 <FileText className="w-4 h-4" aria-hidden="true" />
                                 <span>Report an incident</span>
                             </Link>

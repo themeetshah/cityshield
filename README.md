@@ -67,10 +67,23 @@ python manage.py createsuperuser   # asks only for email + password -> superadmi
 python manage.py runserver
 ```
 
-Police stations: superadmin can sync real stations from OpenStreetMap
-(`POST /api/safety/sync-facilities/`), or import a CSV of real stations:
-`python manage.py import_police_stations --csv stations.csv`
-(columns: `name, latitude, longitude[, address, city, state, contact_number]`).
+Police stations & hospitals come from OpenStreetMap and are stored in the database
+(map pages never call OpenStreetMap directly):
+
+```bash
+python manage.py sync_facilities                 # places in FACILITY_SYNC_PLACES (default: Ahmedabad)
+python manage.py sync_facilities Ahmedabad Gandhinagar
+python manage.py sync_facilities --around 23.03,72.51 --radius 10000
+```
+
+Each run adds new facilities, updates ones that moved or were renamed (matched by
+OpenStreetMap id) and hides ones removed from OpenStreetMap. Schedule it daily/weekly
+(Windows Task Scheduler or cron). Areas without data are also synced automatically in
+the background the first time someone opens the map there, and refreshed every
+`FACILITY_REFRESH_DAYS` (7). Superadmins can trigger a sync via
+`POST /api/safety/sync-facilities/` (`{"place": "Ahmedabad"}`) and check `GET /api/safety/sync-status/`.
+Missing stations should be added to OpenStreetMap (or imported by CSV:
+`python manage.py import_police_stations --csv stations.csv`).
 
 ### Frontend
 ```bash
@@ -82,23 +95,41 @@ npm run dev                     # http://localhost:5174
 
 ### Tests and checks
 ```bash
-cd backend && python manage.py test        # 131 tests
+cd backend && python manage.py test        # 141 tests
 cd frontend && npm run lint && npm run build
 ```
+
+### Supabase (database + media storage)
+
+Without any Supabase settings the backend uses SQLite and the local `media/` and
+`private_media/` folders. To use Supabase instead:
+
+1. Create a Supabase project.
+2. **Database** - *Connect* -> copy the **Session pooler** URI into `DATABASE_URL`
+   (replace `[YOUR-PASSWORD]`), then run `python manage.py migrate`.
+3. **Storage** - create two buckets:
+   - `report-media` - **Public** (report photos/videos)
+   - `sos-videos` - **private** (SOS recordings; never public)
+4. *Storage -> S3 Configuration* -> create an access key and fill in `SUPABASE_URL`,
+   `SUPABASE_S3_ACCESS_KEY_ID`, `SUPABASE_S3_SECRET_ACCESS_KEY` and `SUPABASE_S3_REGION`.
+
+Report media then gets public Supabase URLs. SOS videos stay in the private bucket and are
+only streamed through the backend's signed, expiring URLs. The test suite always runs on
+SQLite with local folders (set `TEST_DATABASE_URL` to run it against Postgres).
 
 ## Production notes
 
 - Set `DJANGO_DEBUG=false`, a strong `SECRET_KEY`, `ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS`.
 - Serve `media/` (public report evidence) from your web server. **Never** serve
   `private_media/` - SOS videos are only streamed through signed, expiring API URLs.
-- Use PostgreSQL and a shared cache (Redis) instead of SQLite / local-memory cache.
+- Use PostgreSQL (e.g. Supabase, above) and a shared cache (Redis) instead of SQLite / local-memory cache.
 
 ## Technologies
 
 React 19, Vite 7, Tailwind CSS 4, React Router 7, React Leaflet 5, Leaflet Routing Machine,
 Recharts, Framer Motion · Django 6, Django REST Framework, SimpleJWT (rotating refresh tokens
 with blacklist), Google Identity Services (server-verified ID tokens), OpenStreetMap
-(Nominatim, Overpass).
+(Nominatim, Overpass) · Supabase (PostgreSQL + Storage via django-storages).
 
 ## Contribute
 

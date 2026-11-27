@@ -98,7 +98,7 @@ const StaffManagement = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <Navbar />
-            <main className="container mx-auto px-3 sm:px-6 py-6 sm:py-8">
+            <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
                     <div>
                         <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">

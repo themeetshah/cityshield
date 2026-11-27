@@ -29,4 +29,5 @@ urlpatterns = [
     path('import-hospitals-csv/', views.import_hospitals_csv, name='import_hospitals_csv'),
     path('export-facilities/', views.export_facilities, name='export_facilities'),
     path('sync-facilities/', views.sync_facilities_from_overpass, name='sync_facilities'),
+    path('sync-status/', views.facility_sync_status, name='facility_sync_status'),
 ]

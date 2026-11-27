@@ -11,7 +11,7 @@ from cityshield_backend.geo import clamp_radius, haversine_m, parse_lat_lng
 from cityshield_backend.throttles import UploadThrottle
 from users.permissions import IsSuperAdmin
 
-from . import overpass, risk
+from . import overpass, risk, sync
 from .facilities import nearby_facilities as collect_facilities
 from .importers import FacilityImportError, import_hospitals, import_police_stations, read_csv_text
 from .models import Hospital, PoliceStation, SafetyZone
@@ -76,7 +76,7 @@ def _text_filters(request, queryset):
 
 @api_view(['GET'])
 def list_police_stations(request):
-    return _paginate(request, _text_filters(request, PoliceStation.objects.all()),
+    return _paginate(request, _text_filters(request, PoliceStation.objects.filter(is_active=True)),
                      PoliceStationSerializer, 'police_stations')
 
 
@@ -87,7 +87,7 @@ def get_police_station(request, station_id):
 
 @api_view(['GET'])
 def list_hospitals(request):
-    hospitals = _text_filters(request, Hospital.objects.all())
+    hospitals = _text_filters(request, Hospital.objects.filter(is_active=True))
     if request.query_params.get('hospital_type'):
         hospitals = hospitals.filter(hospital_type__icontains=request.query_params['hospital_type'])
     return _paginate(request, hospitals, HospitalSerializer, 'hospitals')
@@ -281,24 +281,38 @@ def export_facilities(request):
 @api_view(['POST'])
 @permission_classes([IsSuperAdmin])
 def sync_facilities_from_overpass(request):
-    """Persist OpenStreetMap hospitals and police stations around a point into the database."""
-    try:
-        lat, lng, radius = _point(request, SYNC_DEFAULT_RADIUS_M, overpass.MAX_OVERPASS_RADIUS_M)
-    except BadRequest:
-        return _bad_point()
-    data, warning = overpass.fetch_raw(lat, lng, radius)
-    if warning:
-        return Response({'error': warning}, status=status.HTTP_502_BAD_GATEWAY)
+    """Update police stations + hospitals from OpenStreetMap.
 
-    created = {'hospitals': 0, 'police_stations': 0}
-    for key, model in (('hospitals', Hospital), ('police_stations', PoliceStation)):
-        for item in data[key]:
-            defaults = {'name': item['name'][:200], 'address': item['address'],
-                        'contact_number': item['contact_number'], 'source': 'openstreetmap'}
-            if model is Hospital:
-                defaults['hospital_type'] = item['hospital_type'][:100]
-            _, was_created = model.objects.get_or_create(
-                latitude=item['latitude'], longitude=item['longitude'], defaults=defaults)
-            created[key] += int(was_created)
-    return Response({'success': True, 'hospitals_saved': created['hospitals'],
-                     'police_stations_saved': created['police_stations']})
+    Body: {"place": "Ahmedabad"}  - whole city / district by name, or
+          {"latitude", "longitude", "radius"} - area around a point (max 15 km).
+    Moved/renamed facilities are updated in place; ones removed from OSM are deactivated.
+    """
+    place = (request.data.get('place') or '').strip()
+    try:
+        if place:
+            summary = sync.sync_place(place)
+        else:
+            try:
+                lat, lng, radius = _point(request, SYNC_DEFAULT_RADIUS_M, overpass.MAX_OVERPASS_RADIUS_M)
+            except BadRequest:
+                return _bad_point()
+            summary = sync.sync_around(lat, lng, radius)
+    except overpass.OverpassError:
+        return Response({'error': 'OpenStreetMap servers are busy right now. Please try again in a few minutes.'},
+                        status=status.HTTP_502_BAD_GATEWAY)
+    except ValueError as exc:
+        return Response({'error': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
+    return Response({'success': True, **summary})
+
+
+@api_view(['GET'])
+@permission_classes([IsSuperAdmin])
+def facility_sync_status(request):
+    """When each area was last synced from OpenStreetMap."""
+    from .models import FacilitySyncArea
+    areas = FacilitySyncArea.objects.order_by('-last_success_at')[:100]
+    return Response({'results': [{
+        'key': a.key, 'label': a.label, 'last_success_at': a.last_success_at,
+        'last_attempt_at': a.last_attempt_at, 'last_error': a.last_error,
+        'police_stations': a.police_count, 'hospitals': a.hospital_count,
+    } for a in areas]})

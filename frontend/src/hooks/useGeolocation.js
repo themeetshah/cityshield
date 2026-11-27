@@ -51,18 +51,36 @@ const useGeolocation = ({ watch = false, enabled = true, options } = {}) => {
     const [isManual, setIsManual] = useState(false);
     const optionsRef = useRef({ ...DEFAULT_OPTIONS, ...options });
     const manualRef = useRef(false);
+    const watchdogRef = useRef(null);
+
+    const clearWatchdog = useCallback(() => {
+        clearTimeout(watchdogRef.current);
+        watchdogRef.current = null;
+    }, []);
 
     const onSuccess = useCallback((pos) => {
+        clearWatchdog();
         if (manualRef.current) return;
         setLocation(toLocation(pos));
         setError(null);
         setLoading(false);
-    }, []);
+    }, [clearWatchdog]);
 
     const onError = useCallback((err) => {
+        clearWatchdog();
         setError(describeError(err));
         setLoading(false);
-    }, []);
+    }, [clearWatchdog]);
+
+    // Some browsers never invoke either callback (e.g. a dismissed permission
+    // prompt), so the API's own timeout never fires. Fail visibly instead.
+    const startWatchdog = useCallback(() => {
+        clearWatchdog();
+        watchdogRef.current = setTimeout(
+            () => onError({ code: 3 }),
+            (optionsRef.current.timeout || DEFAULT_OPTIONS.timeout) + 3000
+        );
+    }, [clearWatchdog, onError]);
 
     const refresh = useCallback(() => {
         manualRef.current = false;
@@ -73,11 +91,13 @@ const useGeolocation = ({ watch = false, enabled = true, options } = {}) => {
             return;
         }
         setLoading(true);
+        startWatchdog();
         navigator.geolocation.getCurrentPosition(onSuccess, onError, optionsRef.current);
-    }, [onSuccess, onError]);
+    }, [onSuccess, onError, startWatchdog]);
 
     const setManualLocation = useCallback((latitude, longitude) => {
         manualRef.current = true;
+        clearTimeout(watchdogRef.current);
         setIsManual(true);
         setLocation({ latitude, longitude, accuracy: null, timestamp: Date.now() });
         setError(null);
@@ -91,13 +111,17 @@ const useGeolocation = ({ watch = false, enabled = true, options } = {}) => {
             setLoading(false);
             return undefined;
         }
+        startWatchdog();
         if (watch) {
             const id = navigator.geolocation.watchPosition(onSuccess, onError, optionsRef.current);
-            return () => navigator.geolocation.clearWatch(id);
+            return () => {
+                clearWatchdog();
+                navigator.geolocation.clearWatch(id);
+            };
         }
         navigator.geolocation.getCurrentPosition(onSuccess, onError, optionsRef.current);
-        return undefined;
-    }, [enabled, watch, onSuccess, onError]);
+        return clearWatchdog;
+    }, [enabled, watch, onSuccess, onError, startWatchdog, clearWatchdog]);
 
     return { location, error, loading, isManual, refresh, setManualLocation };
 };

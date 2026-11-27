@@ -281,6 +281,10 @@ def resolve_sos(request, sos_id):
         alert.resolved_by = request.user if request.user.is_authenticated else None
         alert.save(update_fields=['is_active', 'is_streaming', 'resolved_at', 'resolved_by'])
         alert.volunteer_alerts.exclude(status='closed').update(status='closed')
+        # Close any open police dispatch so the team is no longer shown as en route.
+        from police.models import SOSResponse
+        SOSResponse.objects.filter(sos_alert=alert).exclude(status='resolved').update(
+            status='resolved', resolved_at=alert.resolved_at)
         if not by_owner:
             services.notify_owner(alert, 'Your SOS was marked resolved',
                                   f'Resolved by {serializers.display_name(request.user)}.')
@@ -578,7 +582,7 @@ def find_nearest_safe_location(request):
 
     locations = []
     for model, kind in ((Hospital, 'hospital'), (PoliceStation, 'police')):
-        for place in model.objects.filter(**bbox):
+        for place in model.objects.filter(is_active=True, **bbox):
             distance = haversine_m(lat, lng, place.latitude, place.longitude)
             if distance <= radius:
                 locations.append({

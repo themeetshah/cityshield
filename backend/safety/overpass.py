@@ -1,24 +1,31 @@
-"""OpenStreetMap Overpass client for hospitals and police stations.
+"""OpenStreetMap clients used by the facility sync (never called during page loads).
 
-Results are cached per ~1 km cell and radius bucket for 6 hours so a map load
-never waits on Overpass more than once per area. Failures never raise: callers
-get empty lists plus a human readable warning.
+* Overpass: police stations + hospitals inside a bounding box, trying several
+  public mirrors because any single one is frequently slow or overloaded.
+* Nominatim: resolve a city name ("Ahmedabad") to a bounding box.
 """
 import logging
-import math
 
 import requests
 from django.conf import settings
-from django.core.cache import cache
 
 logger = logging.getLogger(__name__)
 
-OVERPASS_URL = 'https://overpass-api.de/api/interpreter'
-CACHE_SECONDS = 6 * 60 * 60
-FAILURE_CACHE_SECONDS = 2 * 60
+OVERPASS_MIRRORS = [
+    'https://overpass-api.de/api/interpreter',
+    'https://overpass.private.coffee/api/interpreter',
+    'https://overpass.kumi.systems/api/interpreter',
+]
+NOMINATIM_SEARCH_URL = 'https://nominatim.openstreetmap.org/search'
 MAX_OVERPASS_RADIUS_M = 15_000
-RADIUS_BUCKET_M = 1_000
-UNAVAILABLE_WARNING = 'OpenStreetMap facility data is temporarily unavailable; showing saved facilities only.'
+
+
+class OverpassError(Exception):
+    """All mirrors failed."""
+
+
+def _headers():
+    return {'User-Agent': settings.OSM_USER_AGENT}
 
 
 def _element_coordinates(element):
@@ -29,6 +36,8 @@ def _element_coordinates(element):
 
 
 def _address(tags):
+    if tags.get('addr:full'):
+        return tags['addr:full']
     parts = [
         tags.get('addr:housenumber'), tags.get('addr:street'), tags.get('addr:suburb'),
         tags.get('addr:city'), tags.get('addr:postcode'),
@@ -36,77 +45,87 @@ def _address(tags):
     return ', '.join(p for p in parts if p)
 
 
+def _facility_type(tags):
+    if tags.get('amenity') == 'police':
+        return 'police'
+    if tags.get('amenity') == 'hospital' or tags.get('healthcare') == 'hospital':
+        return 'hospital'
+    return None
+
+
 def parse_elements(data):
-    """Overpass JSON -> {'hospitals': [...], 'police_stations': [...]} (plain dicts)."""
+    """Overpass JSON -> {'hospitals': [...], 'police_stations': [...]} with OSM identity."""
     result = {'hospitals': [], 'police_stations': []}
+    seen = set()
     for element in data.get('elements', []):
+        identity = (element.get('type'), element.get('id'))
+        if identity in seen:
+            continue
+        seen.add(identity)
         lat, lng = _element_coordinates(element)
-        if lat is None or lng is None:
-            continue
         tags = element.get('tags', {})
-        amenity = tags.get('amenity')
-        if amenity not in ('hospital', 'police'):
+        facility_type = _facility_type(tags)
+        if lat is None or lng is None or facility_type is None:
             continue
-        facility_type = 'hospital' if amenity == 'hospital' else 'police'
+        name = tags.get('name:en') or tags.get('name') or tags.get('official_name')
         result['hospitals' if facility_type == 'hospital' else 'police_stations'].append({
-            'id': f"osm-{element.get('type')}-{element.get('id')}",
-            'name': tags.get('name') or tags.get('name:en') or (
-                'Hospital (unnamed)' if facility_type == 'hospital' else 'Police station (unnamed)'
-            ),
+            'osm_type': element.get('type'),
+            'osm_id': int(element.get('id')),
+            'name': (name or ('Hospital' if facility_type == 'hospital' else 'Police station'))[:200],
             'latitude': float(lat),
             'longitude': float(lng),
             'address': _address(tags),
+            'city': (tags.get('addr:city') or '')[:100],
+            'state': (tags.get('addr:state') or '')[:100],
             'contact_number': (tags.get('phone') or tags.get('contact:phone') or '')[:20],
-            'hospital_type': tags.get('healthcare', '') if facility_type == 'hospital' else '',
+            'hospital_type': (tags.get('healthcare:speciality') or tags.get('operator:type') or '')[:100]
+            if facility_type == 'hospital' else '',
             'type': facility_type,
-            'source': 'openstreetmap',
         })
     return result
 
 
-def _query(lat, lng, radius):
-    around = f'(around:{int(radius)},{lat},{lng})'
-    timeout = int(settings.EXTERNAL_HTTP_TIMEOUT)
+def bbox_query(south, west, north, east, timeout):
+    box = f'({south},{west},{north},{east})'
     return (
-        f'[out:json][timeout:{timeout}];('
-        f'node["amenity"="hospital"]{around};way["amenity"="hospital"]{around};'
-        f'node["amenity"="police"]{around};way["amenity"="police"]{around};'
+        f'[out:json][timeout:{int(timeout)}];('
+        f'nwr["amenity"="police"]{box};'
+        f'nwr["amenity"="hospital"]{box};'
+        f'nwr["healthcare"="hospital"]{box};'
         ');out center tags;'
     )
 
 
-def fetch_raw(lat, lng, radius):
-    """Uncached Overpass request. Returns (data, warning)."""
-    try:
-        response = requests.post(
-            OVERPASS_URL,
-            data={'data': _query(lat, lng, radius)},
-            headers={'User-Agent': settings.OSM_USER_AGENT},
-            timeout=settings.EXTERNAL_HTTP_TIMEOUT,
-        )
-        response.raise_for_status()
-        return parse_elements(response.json()), None
-    except (requests.RequestException, ValueError) as exc:
-        logger.warning('Overpass request failed: %s', type(exc).__name__)
-        return {'hospitals': [], 'police_stations': []}, UNAVAILABLE_WARNING
+def fetch_bbox(south, west, north, east, timeout=None):
+    """Facilities inside the bbox. Tries each mirror in turn; raises OverpassError if all fail."""
+    timeout = int(timeout or settings.OVERPASS_SYNC_TIMEOUT)
+    query = bbox_query(south, west, north, east, timeout)
+    failures = []
+    for url in OVERPASS_MIRRORS:
+        try:
+            response = requests.post(url, data={'data': query}, headers=_headers(), timeout=timeout + 10)
+            response.raise_for_status()
+            data = response.json()
+            if data.get('remark') and 'runtime error' in data['remark'].lower():
+                raise ValueError(data['remark'][:120])
+            return parse_elements(data)
+        except (requests.RequestException, ValueError) as exc:
+            logger.warning('Overpass mirror %s failed: %s', url, exc.__class__.__name__)
+            failures.append(f'{url.split("/")[2]}: {exc.__class__.__name__}')
+    raise OverpassError('All Overpass mirrors failed (' + '; '.join(failures) + ')')
 
 
-def fetch_facilities(lat, lng, radius):
-    """Cached facilities covering `radius` metres around (lat, lng). Returns (data, warning).
-
-    The query is made around a rounded centre with a padded radius so that
-    nearby users share one cache entry; callers filter by exact distance.
-    """
-    radius = min(radius, MAX_OVERPASS_RADIUS_M)
-    center_lat, center_lng = round(lat, 2), round(lng, 2)
-    # Rounding to 0.01 deg moves the centre by at most ~800 m.
-    padded = math.ceil((radius + 800) / RADIUS_BUCKET_M) * RADIUS_BUCKET_M
-    cache_key = f'overpass:{center_lat:.2f}:{center_lng:.2f}:{padded}'
-    cached = cache.get(cache_key)
-    if cached is not None:
-        return cached['data'], cached['warning']
-
-    data, warning = fetch_raw(center_lat, center_lng, padded)
-    cache.set(cache_key, {'data': data, 'warning': warning},
-              FAILURE_CACHE_SECONDS if warning else CACHE_SECONDS)
-    return data, warning
+def geocode_area(name):
+    """Bounding box (south, west, north, east) and display name for a place name, via Nominatim."""
+    response = requests.get(
+        NOMINATIM_SEARCH_URL,
+        params={'q': name, 'format': 'json', 'limit': 1},
+        headers=_headers(),
+        timeout=settings.EXTERNAL_HTTP_TIMEOUT,
+    )
+    response.raise_for_status()
+    results = response.json()
+    if not results:
+        raise ValueError(f'No place found for "{name}"')
+    south, north, west, east = (float(v) for v in results[0]['boundingbox'])
+    return (south, west, north, east), results[0].get('display_name', name)
